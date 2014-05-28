@@ -12,14 +12,52 @@
         android:allowBackup="true"
         android:label="@string/appName"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name="com.example.pois24.MainActivity" >
+        <activity android:name="com.example.pois24.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.pois24.SatActivity"
+            android:label="@string/title_activity_sat" >
+            <intent-filter>
+                <action android:name="com.example.pois24.SAT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.pois24.PorukaActivity"
+            android:label="@string/title_activity_poruka" >
+            <intent-filter>
+                <action android:name="com.example.pois24.PORUKA" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.pois24.StetoskopActivity"
+            android:label="@string/title_activity_stetoskop" >
+            <intent-filter>
+                <action android:name="com.example.pois24.STETOSKOP" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.pois24.PozivActivity"
+            android:label="@string/title_activity_poziv" >
+            <intent-filter>
+                <action android:name="com.example.pois24.POZIV" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
     </application>
 
 </manifest>
