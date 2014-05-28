@@ -1,39 +1,53 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="15dp"
     tools:context="com.example.pois24.MainActivity"
     tools:ignore="MergeRootFrame" >
 
     <Button
         android:id="@+id/btnSat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/sat"
-        />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         
-        />
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:background="@drawable/slika4"
+         />
 
     <Button
         android:id="@+id/btnPoruka"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:layout_alignParentRight="true" 
+        android:background="@drawable/slika1"
+        />
+
+    <Button
+        android:id="@+id/btnStetoskop"
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/btnSat"
+        android:layout_marginTop="10dp" 
+        android:background="@drawable/slika3"
         />
 
     <Button
         android:id="@+id/btnPoziv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-         />
-    
-    </LinearLayout>
+        android:layout_width="140dp"
+        android:layout_height="150dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnPoruka"
+        android:layout_marginTop="10dp" 
+        android:background="@drawable/slika2"
+        />
 
+    <Button
+        android:id="@+id/btnPodesavanja"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="7dp"
+        android:text="Podesavanja" />
+
+</RelativeLayout>
