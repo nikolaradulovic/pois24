@@ -99,19 +99,4 @@
             android:text="Podešavanja" />
     </TableRow>
 
-    <TableRow
-        android:id="@+id/tableRow3"
-        android:layout_width="0dip"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:gravity="center" >
-
-        <Button
-            android:id="@+id/btnPodesavanja"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:text="Podešavanja" />
-    </TableRow>
-
 </TableLayout>
