@@ -101,23 +101,15 @@
     android:gravity="center"
     
         >
-	
-	<LinearLayout
-	    	    
-	    android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical" 
-	    >
+    
    		
     	<Button
+    	android:layout_weight="1"
         android:id="@+id/btnPodesavanja"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" 
-        
         android:text="Podešavanja" />
     	
-	</LinearLayout>
+	
 	</TableRow>
 </TableLayout>
