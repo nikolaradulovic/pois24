@@ -16,7 +16,7 @@ import android.os.Build;
 public class MainActivity extends ActionBarActivity {
 
 	Button sat, poruka, stetoskop, poziv;
-//KOMENTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRRRRR!!!!!!!!!!!!!
+//KOMENTAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRRRRRRRRRRRRRRRRR!!!!!!!!!!!!!!!!!!!!!!
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -67,11 +67,7 @@ public class MainActivity extends ActionBarActivity {
 				startActivity(openPozivActivity);
 			}
 		});
-<<<<<<< HEAD
 
-		
-=======
->>>>>>> ddf5976f87efbeeac67b51daf5e4e5564b6f153d
 	}
 
 	@Override
@@ -94,10 +90,4 @@ public class MainActivity extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-<<<<<<< HEAD
-	
-	
-
-=======
->>>>>>> ddf5976f87efbeeac67b51daf5e4e5564b6f153d
 }
