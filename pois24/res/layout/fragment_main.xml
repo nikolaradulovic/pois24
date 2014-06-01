@@ -9,115 +9,94 @@
     tools:ignore="MergeRootFrame" >
 
     <TableRow
-    android:id="@+id/tableRow1"
-    android:layout_width="0dip"
-    android:layout_height="wrap_content"
-    android:layout_weight="2"
-    android:gravity="center"
-    android:padding="10dp" >  
-           
+        android:id="@+id/tableRow1"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:padding="10dp" >
+
         <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingRight="20dp"
-		>
-        
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingRight="20dp" >
+
             <Button
-        android:id="@+id/btnSat"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/slika4" 
-         />
-            </LinearLayout>
-    	<LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical" >
-            
-		    <Button
-        android:id="@+id/btnPoruka"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/slika1"
-        />
-		</LinearLayout>
+                android:id="@+id/btnSat"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/slika4" />
+        </LinearLayout>
 
-	</TableRow>
-	<TableRow 
-	    android:id="@+id/tableRow2"
-    	android:layout_width="0dip"
-    	android:layout_height="wrap_content"
-    	android:layout_weight="2"
-    	android:gravity="center" 
-    	android:padding="10dp"
-    	>
-	    
-    <LinearLayout 
-       	android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingRight="20dp"
-        >
-        
-    	<Button
-        android:id="@+id/btnStetoskop"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/slika3"
-        />
-    	
-    	</LinearLayout>
-    	
-    	 <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1.0"
-        android:gravity="center"
-        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
 
-   		<Button
-        android:id="@+id/btnPoziv"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/slika2"
-        />
-   		
-   		</LinearLayout>
-   		
-	</TableRow>
-	
+            <Button
+                android:id="@+id/btnPoruka"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/slika1" />
+        </LinearLayout>
+    </TableRow>
+
     <TableRow
-    android:id="@+id/tableRow3"
-    android:layout_width="0dip"
-    android:layout_height="fill_parent"
-    android:layout_weight="1"
-    android:gravity="center"
-    
-        >
-	
-	<LinearLayout
-	    	    
-	    android:layout_width="fill_parent"
+        android:id="@+id/tableRow2"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:padding="10dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingRight="20dp" >
+
+            <Button
+                android:id="@+id/btnStetoskop"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/slika3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/btnPoziv"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/slika2" />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="0dip"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="vertical" 
-	    >
-   		
-    	<Button
-        android:id="@+id/btnPodesavanja"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" 
-        
-        android:text="Podešavanja" />
-    	
-	</LinearLayout>
-	</TableRow>
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/btnPodesavanja"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="Podešavanja" />
+    </TableRow>
+
 </TableLayout>
