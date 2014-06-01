@@ -16,7 +16,7 @@ import android.os.Build;
 public class MainActivity extends ActionBarActivity {
 
 	Button sat, poruka, stetoskop, poziv;
-
+//KOMENTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRRRRR!!!!!!!!!!!!!
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
