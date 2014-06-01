@@ -67,8 +67,11 @@ public class MainActivity extends ActionBarActivity {
 				startActivity(openPozivActivity);
 			}
 		});
+<<<<<<< HEAD
 
 		
+=======
+>>>>>>> ddf5976f87efbeeac67b51daf5e4e5564b6f153d
 	}
 
 	@Override
@@ -91,7 +94,10 @@ public class MainActivity extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
+<<<<<<< HEAD
 	
 	
 
+=======
+>>>>>>> ddf5976f87efbeeac67b51daf5e4e5564b6f153d
 }
