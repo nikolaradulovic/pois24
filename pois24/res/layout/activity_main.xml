@@ -86,6 +86,26 @@
     </TableRow>
 
     <TableRow
+<<<<<<< HEAD
+    android:id="@+id/tableRow3"
+    android:layout_width="0dip"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:gravity="center"
+    
+        >
+    
+   		
+    	<Button
+    	android:layout_weight="1"
+        android:id="@+id/btnPodesavanja"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:text="Podešavanja" />
+    	
+	
+	</TableRow>
+=======
         android:id="@+id/tableRow3"
         android:layout_width="0dip"
         android:layout_height="fill_parent"
@@ -104,4 +124,5 @@
         
     </TableRow>
 
+>>>>>>> ddf5976f87efbeeac67b51daf5e4e5564b6f153d
 </TableLayout>
