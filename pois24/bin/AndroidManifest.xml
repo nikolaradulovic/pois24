@@ -7,7 +7,8 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
-
+	<uses-permission android:name="android.permission.SEND_SMS" />
+	
     <application
         android:allowBackup="true"
         android:label="@string/appName"
@@ -58,6 +59,55 @@
             </intent-filter>
         </activity>
         
+        <activity
+            android:name="com.example.pois24.SendPoruku1"
+            android:label="@string/title_activity_poruka" >
+            <intent-filter>
+                <action android:name="com.example.pois24.PORUKA1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.pois24.SendPoruku2"
+            android:label="@string/title_activity_poruka" >
+            <intent-filter>
+                <action android:name="com.example.pois24.PORUKA2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.pois24.SendPoruku3"
+            android:label="@string/title_activity_poruka" >
+            <intent-filter>
+                <action android:name="com.example.pois24.PORUKA3" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.pois24.SendPoruku4"
+            android:label="@string/title_activity_poruka" >
+            <intent-filter>
+                <action android:name="com.example.pois24.PORUKA4" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.pois24.SendPoruku5"
+            android:label="@string/title_activity_poruka" >
+            <intent-filter>
+                <action android:name="com.example.pois24.PORUKA5" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
