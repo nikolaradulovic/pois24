@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,7 +19,8 @@ import android.os.Build;
 public class MainActivity extends ActionBarActivity {
 
 	Button sat, poruka, stetoskop, poziv;
-//KOMENTAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRRRRRRRRRRRRRRRRR!!!!!!!!!!!!!!!!!!!!!!
+
+	// KOMENTAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRRRRRRRRRRRRRRRRR!!!!!!!!!!!!!!!!!!!!!!
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -45,7 +47,8 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent openPorukaActivity = new Intent("com.example.pois24.PORUKA");
+				Intent openPorukaActivity = new Intent(
+						"com.example.pois24.PORUKA");
 				startActivity(openPorukaActivity);
 			}
 		});
@@ -55,7 +58,8 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent openStetoskopActivity = new Intent("com.example.pois24.STETOSKOP");
+				Intent openStetoskopActivity = new Intent(
+						"com.example.pois24.STETOSKOP");
 				startActivity(openStetoskopActivity);
 			}
 		});
@@ -65,27 +69,32 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
-				//popUp dialog!
-				
-				AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
-	            builder1.setMessage("Write your message here.");
-	            builder1.setCancelable(true);
-	            builder1.setPositiveButton("Yes",
-	                    new DialogInterface.OnClickListener() {
-	                public void onClick(DialogInterface dialog, int id) {
-	                    dialog.cancel();
-	                }
-	            });
-	            builder1.setNegativeButton("No",
-	                    new DialogInterface.OnClickListener() {
-	                public void onClick(DialogInterface dialog, int id) {
-	                    dialog.cancel();
-	                }
-	            });
 
-	            AlertDialog alert11 = builder1.create();
-	            alert11.show();
+				// popUp dialog!
+
+				AlertDialog.Builder builder1 = new AlertDialog.Builder(
+						MainActivity.this);
+				builder1.setMessage("Da li ste sigurni da želite da pozovete unesen broj?");
+				builder1.setCancelable(true);
+				builder1.setPositiveButton("Da",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								Intent callIntent = new Intent(
+										Intent.ACTION_CALL);
+								callIntent.setData(Uri.parse("tel:123456789"));
+								startActivity(callIntent);
+							}
+						});
+				builder1.setNegativeButton("Ne",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								dialog.cancel();
+							}
+						});
+
+				AlertDialog alert11 = builder1.create();
+
+				alert11.show();
 			}
 		});
 
