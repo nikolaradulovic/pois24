@@ -61,6 +61,16 @@
         </activity>
         
         <activity
+            android:name="com.example.pois24.PodesavanjaActivity"
+            android:label="@string/title_activity_podesavanja" >
+            <intent-filter>
+                <action android:name="com.example.pois24.PODESAVANJA" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
             android:name="com.example.pois24.SendPoruku1"
             android:label="@string/title_activity_poruka" >
             <intent-filter>

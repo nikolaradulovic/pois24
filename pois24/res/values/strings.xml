@@ -8,5 +8,6 @@
     <string name="title_activity_poruka">PorukaActivity</string>
     <string name="title_activity_stetoskop">StetoskopActivity</string>
     <string name="title_activity_poziv">PozivActivity</string>
+    <string name="title_activity_podesavanja">PodesavanjaActivity</string>
 
 </resources>
