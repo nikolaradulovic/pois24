@@ -3,9 +3,9 @@
     android:id="@+id/container"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/pozadina"
     android:padding="15dp"
-    android:weightSum="5"
-    android:background="@color/blue"
+    android:weightSum="4"
     tools:context="com.example.pois24.MainActivity"
     tools:ignore="MergeRootFrame" >
 
@@ -89,7 +89,7 @@
         android:id="@+id/tableRow3"
         android:layout_width="0dip"
         android:layout_height="fill_parent"
-        android:layout_weight="1"
+        android:layout_weight="0.5"
         android:gravity="center" >
 
         <Button
@@ -97,7 +97,13 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:text="Podešavanja" />
+            android:background="@drawable/rectangle"
+            android:text="@string/podesavanja"
+            android:textColor="@color/White"
+            android:textAllCaps="true"
+            android:textSize="36sp"
+            android:textStyle="bold"
+             />
     </TableRow>
 
 </TableLayout>
