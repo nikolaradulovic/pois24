@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/pozadina1"
+    tools:context="com.example.pois24.PozivActivity"
+    tools:ignore="HardcodedText" >
+
+    <TextView
+        android:id="@+id/txtUnesiteBroj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:text="UNESITE BROJ ZA HITAN POZIV"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtTelefon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtUnesiteBroj"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Unesite ovde:"
+        android:inputType="phone"
+        android:minEms="9"
+        android:textColorHint="@color/FloralWhite"
+        android:textSize="40sp"
+        android:textStyle="italic" >
+    </EditText>
+
+    <Button
+        android:id="@+id/btnSacuvajBroj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTelefon"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="135dp"
+        android:background="@drawable/rectangle1"
+        android:hint="Sačuvaj željeni broj"
+        android:text="SAČUVAJ"
+        android:textColor="@color/plava"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

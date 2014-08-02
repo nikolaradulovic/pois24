@@ -1,24 +1,19 @@
 package com.example.pois24;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.os.Build;
 
 public class MainActivity extends ActionBarActivity {
 
-	Button sat, poruka, stetoskop, poziv;
+	Button sat, poruka, stetoskop, poziv, podesavanja;
 
 	// KOMENTAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRRRRRRRRRRRRRRRRR!!!!!!!!!!!!!!!!!!!!!!
 	@Override
@@ -30,6 +25,18 @@ public class MainActivity extends ActionBarActivity {
 		poruka = (Button) findViewById(R.id.btnPoruka);
 		stetoskop = (Button) findViewById(R.id.btnStetoskop);
 		poziv = (Button) findViewById(R.id.btnPoziv);
+		podesavanja = (Button) findViewById(R.id.btnPodesavanja);
+
+		podesavanja.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent openPodesavanjaActivity = new Intent(
+						"com.example.pois24.PODESAVANJA");
+				startActivity(openPodesavanjaActivity);
+			}
+		});
 
 		sat.setOnClickListener(new View.OnClickListener() {
 
@@ -72,6 +79,8 @@ public class MainActivity extends ActionBarActivity {
 
 				// popUp dialog!
 
+				final Uri broj = PodesavanjaActivity.vratiBroj();
+
 				AlertDialog.Builder builder1 = new AlertDialog.Builder(
 						MainActivity.this);
 				builder1.setMessage("Da li ste sigurni da želite da pozovete unesen broj?");
@@ -79,10 +88,18 @@ public class MainActivity extends ActionBarActivity {
 				builder1.setPositiveButton("Da",
 						new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog, int id) {
-								Intent callIntent = new Intent(
-										Intent.ACTION_CALL);
-								callIntent.setData(Uri.parse("tel:123456789"));
-								startActivity(callIntent);
+								Intent pozvati = new Intent(Intent.ACTION_CALL);
+								pozvati.setData(broj);
+								if (pozvati.getData() == null) {
+									new AlertDialog.Builder(MainActivity.this)
+											.setTitle("Greška")
+											.setMessage(
+													"U podešavanjima aplikacije ubacite broj za hitan poziv!")
+											.setNeutralButton("OK", null)
+											.setIcon(R.drawable.error).show();
+								} else {
+									startActivity(pozvati);
+								}
 							}
 						});
 				builder1.setNegativeButton("Ne",
@@ -92,9 +109,7 @@ public class MainActivity extends ActionBarActivity {
 							}
 						});
 
-				AlertDialog alert11 = builder1.create();
-
-				alert11.show();
+				builder1.show();
 			}
 		});
 
