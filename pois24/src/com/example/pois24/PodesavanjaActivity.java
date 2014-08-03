@@ -1,10 +1,23 @@
 package com.example.pois24;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,12 +30,7 @@ public class PodesavanjaActivity extends ActionBarActivity {
 
 	Button sacuvaj;
 	EditText broj;
-	private static Uri brojTelefona;
 	private static boolean dodat = false;
-
-	public static Uri vratiBroj() {
-		return brojTelefona;
-	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,26 +55,15 @@ public class PodesavanjaActivity extends ActionBarActivity {
 				// TODO Auto-generated method stub
 				if (broj.getText().toString().matches("[0-9]+")
 						&& broj.getText().toString().length() >= 9) {
-					brojTelefona = Uri
-							.parse("tel:" + broj.getText().toString());
-					dodat = true;
-					// dialog za uspesno dodavanje broja
 
-					// AlertDialog.Builder ad = new AlertDialog.Builder(
-					// PodesavanjaActivity.this);
-					// ad.setTitle("Bravo");
-					// ad.setMessage("USPEŠNO STE UNELI BROJ");
-					// ad.setCancelable(true);
-					// ad.setNeutralButton("OK",
-					// new DialogInterface.OnClickListener() {
-					// public void onClick(DialogInterface dialog,
-					// int id) {
-					// dialog.cancel();
-					// }
-					// });
-					//
-					// AlertDialog alert11 = ad.create();
-					// alert11.show();
+					try {
+						FileOutputStream fos = openFileOutput("broj.txt",
+								Context.MODE_PRIVATE);
+						fos.write(broj.getText().toString().getBytes());
+						fos.close();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 
 					Toast t1 = Toast.makeText(getApplicationContext(),
 							"USPEŠNO STE DODALI BROJ", Toast.LENGTH_LONG);

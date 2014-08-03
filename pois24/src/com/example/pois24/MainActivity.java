@@ -1,5 +1,14 @@
 package com.example.pois24;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+import android.R.raw;
 import android.support.v7.app.ActionBarActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -77,9 +86,7 @@ public class MainActivity extends ActionBarActivity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 
-				// popUp dialog!
-
-				final Uri broj = PodesavanjaActivity.vratiBroj();
+				final Uri broj = vratiBroj();
 
 				AlertDialog.Builder builder1 = new AlertDialog.Builder(
 						MainActivity.this);
@@ -113,6 +120,29 @@ public class MainActivity extends ActionBarActivity {
 			}
 		});
 
+	}
+
+	public Uri vratiBroj() {
+
+		Uri brojTelefona;
+		String brojIzFajla = "0631990099";
+
+		try {
+			BufferedReader inputReader = new BufferedReader(
+					new InputStreamReader(openFileInput("broj.txt")));
+			String inputString;
+			StringBuffer stringBuffer = new StringBuffer();
+			while ((inputString = inputReader.readLine()) != null) {
+				stringBuffer.append(inputString + "\n");
+			}
+			brojIzFajla = stringBuffer.toString();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		brojTelefona = Uri.parse("tel:" + brojIzFajla);
+
+		return brojTelefona;
 	}
 
 	@Override
