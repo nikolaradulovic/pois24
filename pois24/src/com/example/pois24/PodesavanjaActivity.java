@@ -1,52 +1,37 @@
 package com.example.pois24;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.util.Scanner;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class PodesavanjaActivity extends ActionBarActivity {
 
 	Button sacuvaj;
 	EditText broj;
-	private static boolean dodat = false;
+	TextView txtHitanBroj;
+
+	private String hitanBroj;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 
 		super.onCreate(savedInstanceState);
+		if (hitanBroj != null && !hitanBroj.isEmpty()) {
+			txtHitanBroj.setText(hitanBroj);
+		}
 		setContentView(R.layout.activity_podesavanja_poziva);
-		sacuvaj = (Button) findViewById(R.id.btnSacuvajBroj);
-		broj = (EditText) findViewById(R.id.txtTelefon);
-
-		// if (dodat == true) {
-		// setContentView(R.layout.activity_podesavanja_poziva);
-		// broj.setText("GSA");
-		// } else {
-		//
-		// }
+		initialize();
 
 		sacuvaj.setOnClickListener(new View.OnClickListener() {
 
@@ -64,13 +49,15 @@ public class PodesavanjaActivity extends ActionBarActivity {
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
+					hitanBroj = broj.getText().toString();
+
+					finish();
 
 					Toast t1 = Toast.makeText(getApplicationContext(),
 							"USPEŠNO STE DODALI BROJ", Toast.LENGTH_LONG);
 					t1.setDuration(5500);
 					t1.setGravity(Gravity.CENTER, 0, 0);
 					t1.show();
-
 				} else {
 					// TODO: handle exception
 					AlertDialog.Builder ad = new AlertDialog.Builder(
@@ -95,24 +82,38 @@ public class PodesavanjaActivity extends ActionBarActivity {
 
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// TODO Auto-generated method stub
-		getMenuInflater().inflate(R.menu.poziv, menu);
-		return true;
+	private void initialize() {
+		sacuvaj = (Button) findViewById(R.id.btnSacuvajBroj);
+		broj = (EditText) findViewById(R.id.txtTelefon);
+		txtHitanBroj = (TextView) findViewById(R.id.txtHitanBroj);
 	}
 
-	//
-	// @Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+
+		txtHitanBroj.setText(hitanBroj);
 	}
+
+	// @Override
+	// public boolean onCreateOptionsMenu(Menu menu) {
+	// // TODO Auto-generated method stub
+	// getMenuInflater().inflate(R.menu.poziv, menu);
+	// return true;
+	// }
+	//
+	// //
+	// // @Override
+	// public boolean onOptionsItemSelected(MenuItem item) {
+	// // Handle action bar item clicks here. The action bar will
+	// // automatically handle clicks on the Home/Up button, so long
+	// // as you specify a parent activity in AndroidManifest.xml.
+	// int id = item.getItemId();
+	// if (id == R.id.action_settings) {
+	// return true;
+	// }
+	// return super.onOptionsItemSelected(item);
+	// }
 
 }
