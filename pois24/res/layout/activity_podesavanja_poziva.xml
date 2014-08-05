@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/pozadina1"
+    android:gravity="top"
     tools:context="com.example.pois24.PozivActivity"
     tools:ignore="HardcodedText" >
 
@@ -22,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtUnesiteBroj"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Unesite ovde:"
@@ -39,12 +40,34 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtTelefon"
         android:layout_centerInParent="true"
-        android:layout_marginTop="135dp"
+        android:layout_marginTop="170dp"
         android:background="@drawable/rectangle1"
         android:hint="Sačuvaj željeni broj"
         android:text="SAČUVAJ"
         android:textColor="@color/plava"
         android:textSize="30sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTelefon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:text="Hitan broj trenutno je:"
+        android:textColorHint="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtHitanBroj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/White"
+        android:textSize="30sp" />
 
 </RelativeLayout>

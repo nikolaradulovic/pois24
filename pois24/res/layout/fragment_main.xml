@@ -1,6 +1,6 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    android:id="@+id/btnBackTerapije"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="15dp"
@@ -28,7 +28,7 @@
                 android:id="@+id/btnSat"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:background="@drawable/slika4" />
+                android:background="@drawable/slika44" />
         </LinearLayout>
 
         <LinearLayout
@@ -42,7 +42,7 @@
                 android:id="@+id/btnPoruka"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:background="@drawable/slika1" />
+                android:background="@drawable/slika11" />
         </LinearLayout>
     </TableRow>
 
@@ -66,7 +66,7 @@
                 android:id="@+id/btnStetoskop"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:background="@drawable/slika3" />
+                android:background="@drawable/slika33" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,7 +80,7 @@
                 android:id="@+id/btnPoziv"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:background="@drawable/slika2" />
+                android:background="@drawable/slika22" />
         </LinearLayout>
     </TableRow>
 

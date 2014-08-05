@@ -1,12 +1,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    android:id="@+id/btnBackTerapije"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="15dp"
     tools:context="com.example.pois24.PorukaActivity"
-    tools:ignore="MergeRootFrame" >
+    tools:ignore="MergeRootFrame" 
+    android:background="@drawable/pozadina1">
     <ListView
         android:id="@+id/listaPoruka"
         android:layout_width="match_parent"
