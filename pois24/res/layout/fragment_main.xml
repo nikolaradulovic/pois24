@@ -6,7 +6,7 @@
     android:padding="15dp"
     android:weightSum="5"
     tools:context="com.example.pois24.MainActivity"
-    tools:ignore="MergeRootFrame" >
+    tools:ignore="HardcodedText" >
 
     <TableRow
         android:id="@+id/tableRow1"
