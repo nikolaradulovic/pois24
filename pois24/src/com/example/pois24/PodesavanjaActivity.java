@@ -1,6 +1,9 @@
 package com.example.pois24;
 
+import java.io.BufferedReader;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -20,16 +23,11 @@ public class PodesavanjaActivity extends ActionBarActivity {
 	EditText broj;
 	TextView txtHitanBroj;
 
-	private String hitanBroj;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 
 		super.onCreate(savedInstanceState);
-		if (hitanBroj != null && !hitanBroj.isEmpty()) {
-			txtHitanBroj.setText(hitanBroj);
-		}
 		setContentView(R.layout.activity_podesavanja_poziva);
 		initialize();
 
@@ -49,7 +47,6 @@ public class PodesavanjaActivity extends ActionBarActivity {
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-					hitanBroj = broj.getText().toString();
 
 					finish();
 
@@ -89,13 +86,30 @@ public class PodesavanjaActivity extends ActionBarActivity {
 	}
 
 	@Override
-	protected void onStart() {
+	protected void onResume() {
 		// TODO Auto-generated method stub
-		super.onStart();
-
-		txtHitanBroj.setText(hitanBroj);
+		super.onResume();
+		txtHitanBroj.setText(vratiBroj());
 	}
 
+	public String vratiBroj() {
+
+		String brojIzFajla = "";
+
+		try {
+			BufferedReader inputReader = new BufferedReader(
+					new InputStreamReader(openFileInput("broj.txt")));
+			String inputString;
+			StringBuffer stringBuffer = new StringBuffer();
+			while ((inputString = inputReader.readLine()) != null) {
+				stringBuffer.append(inputString + "\n");
+			}
+			brojIzFajla = stringBuffer.toString();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return brojIzFajla;
+	}
 	// @Override
 	// public boolean onCreateOptionsMenu(Menu menu) {
 	// // TODO Auto-generated method stub

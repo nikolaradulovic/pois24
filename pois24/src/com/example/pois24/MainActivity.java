@@ -22,11 +22,7 @@ public class MainActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		sat = (Button) findViewById(R.id.btnSat);
-		poruka = (Button) findViewById(R.id.btnPoruka);
-		stetoskop = (Button) findViewById(R.id.btnStetoskop);
-		poziv = (Button) findViewById(R.id.btnPoziv);
-		podesavanja = (Button) findViewById(R.id.btnPodesavanja);
+		initialize();
 
 		podesavanja.setOnClickListener(new View.OnClickListener() {
 
@@ -112,6 +108,14 @@ public class MainActivity extends ActionBarActivity {
 			}
 		});
 
+	}
+
+	public void initialize() {
+		sat = (Button) findViewById(R.id.btnSat);
+		poruka = (Button) findViewById(R.id.btnPoruka);
+		stetoskop = (Button) findViewById(R.id.btnStetoskop);
+		poziv = (Button) findViewById(R.id.btnPoziv);
+		podesavanja = (Button) findViewById(R.id.btnPodesavanja);
 	}
 
 	public Uri vratiBroj() {
