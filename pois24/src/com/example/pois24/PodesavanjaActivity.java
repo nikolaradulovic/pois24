@@ -28,6 +28,7 @@ public class PodesavanjaActivity extends ActionBarActivity {
 		// TODO Auto-generated method stub
 
 		super.onCreate(savedInstanceState);
+
 		setContentView(R.layout.activity_podesavanja_poziva);
 		initialize();
 
