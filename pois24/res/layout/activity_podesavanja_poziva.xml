@@ -1,29 +1,29 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
     android:background="@drawable/pozadina1"
-    android:gravity="top"
+    android:weightSum="8"
     tools:context="com.example.pois24.PozivActivity"
-    tools:ignore="HardcodedText" >
+    tools:ignore="HardcodedText" 
+    >
 
     <TextView
         android:id="@+id/txtUnesiteBroj"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:gravity="center"
         android:text="UNESITE BROJ ZA HITAN POZIV"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/txtTelefon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtUnesiteBroj"
-        android:layout_marginTop="20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:ems="10"
         android:gravity="center"
         android:hint="Unesite ovde:"
@@ -33,41 +33,46 @@
         android:textSize="40sp"
         android:textStyle="italic" >
     </EditText>
-
-    <Button
-        android:id="@+id/btnSacuvajBroj"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtTelefon"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="170dp"
-        android:background="@drawable/rectangle1"
-        android:hint="Sačuvaj željeni broj"
-        android:text="SAČUVAJ"
-        android:textColor="@color/plava"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
+    
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtTelefon"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:text="Hitan broj trenutno je:"
+        android:layout_gravity="center"
         android:textColorHint="@color/black"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtHitanBroj"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/white"
+        android:layout_weight="1"
         android:layout_marginTop="10dp"
         android:textColor="@color/White"
-        android:textSize="30sp" />
+         />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/btnSacuvajBroj"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/rectangle1"
+        android:hint="Sačuvaj željeni broj"
+        android:text="SAČUVAJ"
+        android:layout_gravity="center"
+        android:textColor="@color/plava"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20sp"
+        android:layout_marginTop="20sp" />
+
+    
+
+</LinearLayout>
