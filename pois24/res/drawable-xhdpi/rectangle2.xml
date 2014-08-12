@@ -9,7 +9,7 @@
 
     <stroke
         android:width="5px"
-        android:color="@color/ivica" />
+        android:color="@color/ivica2" />
 
     <corners
         android:bottomLeftRadius="15dp"

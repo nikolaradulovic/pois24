@@ -1,13 +1,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/pozadina1"
+    android:orientation="vertical"
     android:weightSum="8"
     tools:context="com.example.pois24.PozivActivity"
-    tools:ignore="HardcodedText" 
-    >
+    tools:ignore="HardcodedText" >
 
     <TextView
         android:id="@+id/txtUnesiteBroj"
@@ -33,15 +32,15 @@
         android:textSize="40sp"
         android:textStyle="italic" >
     </EditText>
-    
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="fill_parent"
-        android:gravity="center"
         android:layout_height="0dp"
-        android:layout_weight="2"
-        android:text="Hitan broj trenutno je:"
         android:layout_gravity="center"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="Hitan broj trenutno je:"
         android:textColorHint="@color/black"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -52,27 +51,26 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        
-        android:layout_weight="1"
         android:layout_marginTop="10dp"
+        android:layout_weight="1"
         android:textColor="@color/black"
-         />
+        android:textSize="30sp" 
+        android:gravity="center"
+        />
 
     <Button
         android:id="@+id/btnSacuvajBroj"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20sp"
+        android:layout_marginTop="20sp"
         android:layout_weight="1"
         android:background="@drawable/rectangle1"
         android:hint="Sačuvaj željeni broj"
         android:text="SAČUVAJ"
-        android:layout_gravity="center"
         android:textColor="@color/plava"
         android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20sp"
-        android:layout_marginTop="20sp" />
-
-    
+        android:textStyle="bold" />
 
 </LinearLayout>

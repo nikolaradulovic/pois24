@@ -15,7 +15,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/rectangle1"
+        android:background="@drawable/rectangle2"
         android:text="@string/TERAPIJA1"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -27,7 +27,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="18dp"
-        android:background="@drawable/rectangle1"
+        android:background="@drawable/rectangle2"
         android:text="@string/TERAPIJA2"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -39,7 +39,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="18dp"
-        android:background="@drawable/rectangle1"
+        android:background="@drawable/rectangle2"
         android:text="@string/TERAPIJA3"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -51,7 +51,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="18dp"
-        android:background="@drawable/rectangle1"
+        android:background="@drawable/rectangle2"
         android:text="@string/TERAPIJA4"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -63,17 +63,18 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="18dp"
-        android:background="@drawable/rectangle1"
+        android:background="@drawable/rectangle2"
         android:text="@string/TERAPIJA5"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnBackTerapija"
-        android:layout_width="121dp"
-        android:layout_height="111dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_gravity="left"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_back" />
 
 </LinearLayout>

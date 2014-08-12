@@ -23,6 +23,8 @@ public class PorukaActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setTitle("Slanje hitnih poruka");
+		getSupportActionBar().setIcon(R.drawable.slika11);
 		setContentView(R.layout.activity_poruka);
 
 		back = (Button) findViewById(R.id.btnBack);

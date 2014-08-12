@@ -28,7 +28,8 @@ public class PodesavanjaActivity extends ActionBarActivity {
 		// TODO Auto-generated method stub
 
 		super.onCreate(savedInstanceState);
-
+		setTitle("Podesavanja broja");
+		getSupportActionBar().setIcon(R.drawable.slika22);
 		setContentView(R.layout.activity_podesavanja_poziva);
 		initialize();
 
@@ -58,6 +59,7 @@ public class PodesavanjaActivity extends ActionBarActivity {
 					t1.show();
 				} else {
 					// TODO: handle exception
+
 					AlertDialog.Builder ad = new AlertDialog.Builder(
 							PodesavanjaActivity.this);
 					ad.setTitle("Unesite ponovo");

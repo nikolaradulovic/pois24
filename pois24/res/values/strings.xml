@@ -9,20 +9,19 @@
     <string name="title_activity_stetoskop">StetoskopActivity</string>
     <string name="title_activity_poziv">PozivActivity</string>
     <string name="title_activity_podesavanja">PodesavanjaActivity</string>
-	<string name="podesavanja">Podesavanja</string>
+    <string name="podesavanja">Podesavanja</string>
     <string name="TERAPIJA1">TERAPIJA 1</string>
     <string name="TERAPIJA2">TERAPIJA 2</string>
     <string name="TERAPIJA3">TERAPIJA 3</string>
     <string name="TERAPIJA4">TERAPIJA 4</string>
     <string name="TERAPIJA5">TERAPIJA 5</string>
-	<string name="un">Unesite broj:</string>
-	<string name="Podsetnik">PODSETNIK</string>
-	<string name="rodjenjdani">RODJENDANI</string>
-	<string name="tvProgram">TV PROGRAM</string>
-	<string name="pregledi">PREGLEDI(?)</string>
-	<string name="nazad">NAZAD</string>
-    
-    
+    <string name="un">Unesite broj:</string>
+    <string name="Podsetnik">PODSETNIK</string>
+    <string name="rodjenjdani">RODJENDANI</string>
+    <string name="tvProgram">TV PROGRAM</string>
+    <string name="pregledi">PREGLEDI(?)</string>
+    <string name="nazad">NAZAD</string>
+
     <color name="blue">#00688B</color>
     <color name="plava">#00006B</color>
     <color name="White">#FFFFFF</color>
@@ -54,5 +53,6 @@
     <color name="black">#000000</color>
     <color name="nova">#A39D72</color>
     <color name="ivica">#EDD8A6</color>
+    <color name="ivica2">#3B2414</color>
 
 </resources>
