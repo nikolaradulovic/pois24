@@ -4,8 +4,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/pozadina1"
+    android:weightSum = "10"
     tools:context="com.example.pois24.SatActivity"
-    tools:ignore="MergeRootFrame" >
+    tools:ignore="MergeRootFrame"
+     >
+
+    <TextView
+        android:id="@+id/sat_naslov"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:text="@string/Podsetnik"
+        android:textSize="35sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textStyle="bold"
+        
+         />
+
+    <TextView
+        android:id="@+id/prazan"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnRodjendani"
+        android:layout_width="fill_parent"
+        android:layout_weight="2"
+        android:layout_height="0dp"
+        android:text="@string/rodjenjdani" 
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        />
+    
+    <Button
+        android:id="@+id/btnTvProgram"
+        android:layout_width="fill_parent"
+        android:layout_weight="2"
+        android:layout_height="0dp"
+        android:text="@string/tvProgram" 
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        />
+    
+    <Button
+        android:id="@+id/btnPregledi"
+        android:layout_width="fill_parent"
+        android:layout_weight="2"
+        android:layout_height="0dp"
+        android:text="@string/pregledi" 
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        />
+    
+    <Button
+        android:id="@+id/btnNazad"
+        android:layout_width="fill_parent"
+        android:layout_weight="2"
+        android:layout_height="0dp"
+        android:text="@string/nazad" 
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        />
     
     
 </LinearLayout>

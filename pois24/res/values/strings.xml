@@ -16,6 +16,11 @@
     <string name="TERAPIJA4">TERAPIJA 4</string>
     <string name="TERAPIJA5">TERAPIJA 5</string>
 	<string name="un">Unesite broj:</string>
+	<string name="Podsetnik">PODSETNIK</string>
+	<string name="rodjenjdani">RODJENDANI</string>
+	<string name="tvProgram">TV PROGRAM</string>
+	<string name="pregledi">PREGLEDI(?)</string>
+	<string name="nazad">NAZAD</string>
     
     
     <color name="blue">#00688B</color>
