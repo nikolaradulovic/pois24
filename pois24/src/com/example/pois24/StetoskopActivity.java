@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 
 public class StetoskopActivity extends ActionBarActivity {
@@ -15,6 +16,15 @@ public class StetoskopActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_stetoskop);
+		
+		btnBack = (Button) findViewById(R.id.btnBackTerapija);
+		
+		btnBack.setOnClickListener(new View.OnClickListener() {
+			   @Override
+			   public void onClick(View v) {
+			      finish();
+			   }
+			  });
 
 		// if (savedInstanceState == null) {
 		// getSupportFragmentManager().beginTransaction()

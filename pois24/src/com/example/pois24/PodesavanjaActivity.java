@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 public class PodesavanjaActivity extends ActionBarActivity {
 
-	Button sacuvaj;
+	Button sacuvaj, povratak;
 	EditText broj;
 	TextView txtHitanBroj;
 
@@ -32,6 +32,13 @@ public class PodesavanjaActivity extends ActionBarActivity {
 		getSupportActionBar().setIcon(R.drawable.slika22);
 		setContentView(R.layout.activity_podesavanja_poziva);
 		initialize();
+		
+		povratak.setOnClickListener(new View.OnClickListener() {
+			   @Override
+			   public void onClick(View v) {
+			      finish();
+			   }
+			  });
 
 		sacuvaj.setOnClickListener(new View.OnClickListener() {
 
@@ -84,8 +91,10 @@ public class PodesavanjaActivity extends ActionBarActivity {
 
 	private void initialize() {
 		sacuvaj = (Button) findViewById(R.id.btnSacuvajBroj);
+		povratak = (Button) findViewById(R.id.btnNazadPodesavanja);
 		broj = (EditText) findViewById(R.id.txtTelefon);
 		txtHitanBroj = (TextView) findViewById(R.id.txtHitanBroj);
+		
 	}
 
 	@Override
