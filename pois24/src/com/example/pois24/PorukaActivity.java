@@ -29,6 +29,15 @@ public class PorukaActivity extends ActionBarActivity {
 
 		back = (Button) findViewById(R.id.btnBack);
 
+		back.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 				R.layout.activity_listview, poruke);
 
