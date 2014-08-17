@@ -1,10 +1,10 @@
 package com.example.pois24;
 
+import java.util.LinkedList;
+
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -16,18 +16,34 @@ public class PorukaActivity extends ActionBarActivity {
 
 	Button back;
 	ListView lista;
+	// ucitavace se iz baze mozda
+	int brojPoruka = 10;
 
-	String[] poruke = new String[] { "poruka1", "poruka2", "poruka3",
-			"poruka4", "poruka5", };
+	String[] poruke = new String[] { "Poruka 1", "Poruka 2", "Poruka 3",
+			"Poruka 4", "Poruka 5", "Poruka 6", "Poruka 7", "Poruka 8",
+			"Poruka 9", "Poruka 10" };
+
+	LinkedList<Intent> listaIntentova = new LinkedList<Intent>();
+
+	public void napuniListuIntentova() {
+		for (int i = 1; i < brojPoruka; i++) {
+			Intent i1 = new Intent("com.example.pois24.PORUKAX");
+			Bundle b1 = new Bundle();
+			b1.putInt("id", i);
+			i1.putExtras(b1);
+			listaIntentova.add(i1);
+		}
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setTitle("Slanje hitnih poruka");
 		getSupportActionBar().setIcon(R.drawable.slika11);
+		napuniListuIntentova();
 		setContentView(R.layout.activity_poruka);
 
-		back = (Button) findViewById(R.id.btnBack);
+		initialize();
 
 		back.setOnClickListener(new View.OnClickListener() {
 
@@ -38,69 +54,25 @@ public class PorukaActivity extends ActionBarActivity {
 			}
 		});
 
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				R.layout.activity_listview, poruke);
-
-		lista = (ListView) findViewById(R.id.listaPoruka);
-		lista.setAdapter(adapter);
-
 		lista.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				// TODO Auto-generated method stub
-
-				switch (position) {
-				case 0:
-					Intent openPoruka1 = new Intent(
-							"com.example.pois24.PORUKA1");
-					startActivity(openPoruka1);
-					break;
-				case 1:
-					Intent openPoruka2 = new Intent(
-							"com.example.pois24.PORUKA2");
-					startActivity(openPoruka2);
-					break;
-				case 2:
-					Intent openPoruka3 = new Intent(
-							"com.example.pois24.PORUKA3");
-					startActivity(openPoruka3);
-					break;
-				case 3:
-					Intent openPoruka4 = new Intent(
-							"com.example.pois24.PORUKA4");
-					startActivity(openPoruka4);
-					break;
-				case 4:
-					Intent openPoruka5 = new Intent(
-							"com.example.pois24.PORUKA5");
-					startActivity(openPoruka5);
-					break;
-				}
+				startActivity(listaIntentova.get(position));
 			}
 		});
 
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
+	public void initialize() {
+		back = (Button) findViewById(R.id.btnBack);
+		ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
+				R.layout.activity_listview, poruke);
+		lista = (ListView) findViewById(R.id.listaPoruka);
 
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.poruka, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
+		lista.setAdapter(adapter1);
 	}
 
 }
