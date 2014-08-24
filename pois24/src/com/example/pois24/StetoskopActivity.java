@@ -1,6 +1,7 @@
 package com.example.pois24;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,7 +11,7 @@ import android.widget.Button;
 public class StetoskopActivity extends ActionBarActivity {
 
 	Button btnBack;
-	Button btn1;
+	Button terapija;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +19,21 @@ public class StetoskopActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_stetoskop);
 		
 		btnBack = (Button) findViewById(R.id.btnBackTerapija);
+		terapija= (Button)  findViewById(R.id.btnTerapija1);
 		
 		btnBack.setOnClickListener(new View.OnClickListener() {
 			   @Override
 			   public void onClick(View v) {
 			      finish();
+			   }
+			  });
+		
+		terapija.setOnClickListener(new View.OnClickListener() {
+			   @Override
+			   public void onClick(View v) {
+				   Intent openTerapijaActivity = new Intent(
+						"com.example.pois24.TERAPIJA1");
+					startActivity(openTerapijaActivity);
 			   }
 			  });
 

@@ -12,7 +12,6 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
-        android:icon="@drawable/slika22"
         android:allowBackup="true"
         android:label="@string/appName"
         android:theme="@style/AppTheme" >
@@ -109,6 +108,15 @@
             android:label="@string/title_activity_poruka" >
             <intent-filter>
                 <action android:name="com.example.pois24.PORUKA5" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.pois24.TerapijaActivity"
+            android:label="@string/title_activity_terapija1" >
+            <intent-filter>
+                <action android:name="com.example.pois24.TERAPIJA1" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

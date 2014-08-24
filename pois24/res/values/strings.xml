@@ -21,6 +21,7 @@
     <string name="tvProgram">TV PROGRAM</string>
     <string name="pregledi">PREGLEDI(?)</string>
     <string name="nazad">NAZAD</string>
+    <string name="hint_unos">Unesite ovde:</string>
 
     <color name="blue">#00688B</color>
     <color name="plava">#00006B</color>
@@ -54,5 +55,7 @@
     <color name="nova">#A39D72</color>
     <color name="ivica">#EDD8A6</color>
     <color name="ivica2">#3B2414</color>
+
+    <string name="title_activity_terapija1">Terapija 1</string>
 
 </resources>
