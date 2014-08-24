@@ -7,9 +7,10 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
-	<uses-permission android:name="android.permission.SEND_SMS" />
-	
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:allowBackup="true"
         android:label="@string/appName"
@@ -39,7 +40,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
+        <activity
+            android:name="com.example.pois24.SendPorukuX"
+            android:label="@string/title_activity_poruka" >
+            <intent-filter>
+                <action android:name="com.example.pois24.PORUKAX" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.example.pois24.StetoskopActivity"
             android:label="@string/title_activity_stetoskop" >
@@ -49,7 +58,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
+        <activity
+            android:name="com.example.pois24.TerapijaActivity"
+            android:label="@string/title_activity_terapija1" >
+            <intent-filter>
+                <action android:name="com.example.pois24.TERAPIJA1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.example.pois24.PozivActivity"
             android:label="@string/title_activity_poziv" >
@@ -59,7 +76,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="com.example.pois24.PodesavanjaActivity"
             android:label="@string/title_activity_podesavanja" >
@@ -69,7 +85,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="com.example.pois24.SendPoruku1"
             android:label="@string/title_activity_poruka" >
@@ -79,7 +94,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="com.example.pois24.SendPoruku2"
             android:label="@string/title_activity_poruka" >
@@ -89,7 +103,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="com.example.pois24.SendPoruku3"
             android:label="@string/title_activity_poruka" >
@@ -99,7 +112,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="com.example.pois24.SendPoruku4"
             android:label="@string/title_activity_poruka" >
@@ -109,7 +121,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="com.example.pois24.SendPoruku5"
             android:label="@string/title_activity_poruka" >
