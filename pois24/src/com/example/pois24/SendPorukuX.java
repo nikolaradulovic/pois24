@@ -1,5 +1,9 @@
 package com.example.pois24;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -14,6 +18,7 @@ public class SendPorukuX extends Activity {
 	Button btnSend, btnNazad, btnSacuvaj;
 	EditText textPhoneNo;
 	EditText textSMS;
+	SQLitePrimeriPoruka db = new SQLitePrimeriPoruka(this);
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -21,14 +26,12 @@ public class SendPorukuX extends Activity {
 		setContentView(R.layout.poruka_x);
 		initialize();
 
-		final SQLitePrimeriPoruka db = new SQLitePrimeriPoruka(this);
-
 		db.dodajPrimer("123");
 		db.dodajPrimer("241");
 		db.dodajPrimer("245");
 		db.dodajPrimer("63");
 
-		final int id = getIntent().getExtras().getInt("id");
+		final int id = this.getIntent().getExtras().getInt("id");
 		if (db.vratiPrimer(id).toString() != null) {
 			textSMS.setText(db.vratiPrimer(id));
 		}
@@ -62,7 +65,20 @@ public class SendPorukuX extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				String text = textSMS.getText().toString();
-				db.updatePrimer(text, id);
+				if (text.length() == 0) {
+					Toast t1 = Toast.makeText(getApplicationContext(),
+							"Niste uneli tekst poruke", Toast.LENGTH_LONG);
+					t1.show();
+				} else {
+					db.updatePrimer(text, id);
+					Toast t1 = Toast
+							.makeText(getApplicationContext(),
+									"Uspešno ste uneli tekst poruke",
+									Toast.LENGTH_LONG);
+					t1.show();
+					finish();
+				}
+
 				// TREBALO BI PO ID- da se dodaju!
 			}
 		});
@@ -77,12 +93,39 @@ public class SendPorukuX extends Activity {
 		});
 	}
 
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		db.close();
+	}
+
 	public void initialize() {
 		btnNazad = (Button) findViewById(R.id.btnBack);
 		btnSend = (Button) findViewById(R.id.btnPosalji);
 		btnSacuvaj = (Button) findViewById(R.id.btnSacuvajPoruku);
 		textPhoneNo = (EditText) findViewById(R.id.txtBrojTelefona);
 		textSMS = (EditText) findViewById(R.id.txtSMSporukaX);
+		textPhoneNo.setText(vratiBroj());
 	}
 
+	// metoda iz podesavanjaAct
+	public String vratiBroj() {
+
+		String brojIzFajla = "";
+
+		try {
+			BufferedReader inputReader = new BufferedReader(
+					new InputStreamReader(openFileInput("broj.txt")));
+			String inputString;
+			StringBuffer stringBuffer = new StringBuffer();
+			while ((inputString = inputReader.readLine()) != null) {
+				stringBuffer.append(inputString + "\n");
+			}
+			brojIzFajla = stringBuffer.toString();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return brojIzFajla;
+	}
 }

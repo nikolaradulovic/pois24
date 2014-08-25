@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -16,17 +17,14 @@ public class PorukaActivity extends ActionBarActivity {
 
 	Button back;
 	ListView lista;
-	// ucitavace se iz baze mozda
-	int brojPoruka = 10;
+	SQLitePrimeriPoruka db;
 
-	String[] poruke = new String[] { "Poruka 1", "Poruka 2", "Poruka 3",
-			"Poruka 4", "Poruka 5", "Poruka 6", "Poruka 7", "Poruka 8",
-			"Poruka 9", "Poruka 10" };
+	int brojPoruka = 10;
 
 	LinkedList<Intent> listaIntentova = new LinkedList<Intent>();
 
 	public void napuniListuIntentova() {
-		for (int i = 1; i < brojPoruka; i++) {
+		for (int i = 1; i <= brojPoruka; i++) {
 			Intent i1 = new Intent("com.example.pois24.PORUKAX");
 			Bundle b1 = new Bundle();
 			b1.putInt("id", i);
@@ -42,7 +40,7 @@ public class PorukaActivity extends ActionBarActivity {
 		getSupportActionBar().setIcon(R.drawable.slika11);
 		napuniListuIntentova();
 		setContentView(R.layout.activity_poruka);
-
+		db = new SQLitePrimeriPoruka(this);
 		initialize();
 
 		back.setOnClickListener(new View.OnClickListener() {
@@ -66,11 +64,27 @@ public class PorukaActivity extends ActionBarActivity {
 
 	}
 
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		db.close();
+	}
+
 	public void initialize() {
 		back = (Button) findViewById(R.id.btnBack);
+		lista = (ListView) findViewById(R.id.listaPoruka);
+
+		String[] poruke = new String[10];
+		for (int i = 1; i < poruke.length; i++) {
+			if (db.vratiPrimer(i) != null) {
+				poruke[i] = db.vratiPrimer(i);
+			
+			}
+		}
+
 		ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
 				R.layout.activity_listview, poruke);
-		lista = (ListView) findViewById(R.id.listaPoruka);
 
 		lista.setAdapter(adapter1);
 	}
