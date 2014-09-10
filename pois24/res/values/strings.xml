@@ -16,10 +16,11 @@
     <string name="TERAPIJA4">TERAPIJA 4</string>
     <string name="TERAPIJA5">TERAPIJA 5</string>
     <string name="un">Unesite broj:</string>
-    <string name="Podsetnik">PODSETNIK</string>
+    <string name="Podsetnik"><u>PODSETNIK</u></string>
     <string name="rodjenjdani">RODJENDANI</string>
     <string name="tvProgram">TV PROGRAM</string>
-    <string name="pregledi">PREGLEDI(?)</string>
+    <string name="pregledi">PREGLEDI</string>
+    <string name="uneto">**IZMENE**</string>
     <string name="nazad">NAZAD</string>
     <string name="hint_unos">Unesite ovde:</string>
 
@@ -57,5 +58,8 @@
     <color name="ivica2">#3B2414</color>
 
     <string name="title_activity_terapija1">Terapija 1</string>
+    <string name="title_activity_rodjendan">Rodjendan</string>
+    <string name="title_activity_tv_program">TV Program</string>
+    <string name="title_activity_pregledi">Pregledi</string>
 
 </resources>

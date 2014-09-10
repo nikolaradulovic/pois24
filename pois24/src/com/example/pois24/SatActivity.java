@@ -2,6 +2,7 @@ package com.example.pois24;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -9,13 +10,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import android.widget.TextView;
 
 public class SatActivity extends ActionBarActivity {
 
 	TextView naslov, prazan;
-	Button tv, rodjenjdani, pregledi, nazad;
+	Button tv, rodjendani, pregledi, nazad, uneto;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -24,9 +24,10 @@ public class SatActivity extends ActionBarActivity {
 		
 		naslov = (TextView) findViewById(R.id.sat_naslov);
 		prazan = (TextView) findViewById(R.id.prazan);
-		rodjenjdani = (Button) findViewById(R.id.btnRodjendani);
+		rodjendani = (Button) findViewById(R.id.btnRodjendani);
 		tv = (Button) findViewById(R.id.btnTvProgram);
 		pregledi = (Button) findViewById(R.id.btnPregledi);
+		uneto = (Button) findViewById(R.id.btnUneto);
 		nazad = (Button) findViewById(R.id.btnNazad);
 		
 		
@@ -34,6 +35,33 @@ public class SatActivity extends ActionBarActivity {
 			   @Override
 			   public void onClick(View v) {
 			      finish();
+			   }
+			  });
+		
+		rodjendani.setOnClickListener(new View.OnClickListener() {
+			   @Override
+			   public void onClick(View v) {
+				   Intent openRodjendanActivity = new Intent(
+						"com.example.pois24.RODJENDAN");
+					startActivity(openRodjendanActivity);
+			   }
+			  });
+		
+		tv.setOnClickListener(new View.OnClickListener() {
+			   @Override
+			   public void onClick(View v) {
+				   Intent openTvProgramActivity = new Intent(
+						"com.example.pois24.TVPROGRAM");
+					startActivity(openTvProgramActivity);
+			   }
+			  });
+		
+		pregledi.setOnClickListener(new View.OnClickListener() {
+			   @Override
+			   public void onClick(View v) {
+				   Intent openPreglediActivity = new Intent(
+						"com.example.pois24.PREGLEDI");
+					startActivity(openPreglediActivity);
 			   }
 			  });
 			  

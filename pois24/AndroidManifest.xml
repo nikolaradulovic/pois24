@@ -130,6 +130,33 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.pois24.RodjendanActivity"
+            android:label="@string/title_activity_rodjendan" >
+            <intent-filter>
+                <action android:name="com.example.pois24.RODJENDAN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.pois24.TvProgramActivity"
+            android:label="@string/title_activity_tv_program" >
+            <intent-filter>
+                <action android:name="com.example.pois24.TVPROGRAM" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.pois24.PreglediActivity"
+            android:label="@string/title_activity_pregledi" >
+            <intent-filter>
+                <action android:name="com.example.pois24.PREGLEDI" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

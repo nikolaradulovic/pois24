@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pois24.RodjendanActivity"
+    android:orientation="vertical"
+    android:background="@drawable/pozadina1" 
+    android:weightSum="25">
+    
+     <TextView
+        android:id="@+id/txtPregledNaslov"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="PREGLED"
+        android:textSize="35sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_weight="1" />
+     
+     <TextView
+        android:id="@+id/txtPregledIme"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="IME BOLNICE: " 
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+         android:layout_marginTop="2sp"
+        android:layout_marginLeft="10sp"/>
+     
+      <EditText
+        android:id="@+id/edtPregledUnos"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="30" />
+        
+            <TextView
+        android:id="@+id/txtDatum"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="DATUM:"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="10sp" />
+
+    <DatePicker
+        android:id="@+id/dpDatumPr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="10sp"
+         />
+
+    <TextView
+        android:id="@+id/txtVreme"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="VREME:"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="10sp" />
+
+    <TimePicker
+        android:id="@+id/tpVremePr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_marginTop="5sp"
+        android:layout_weight="5" />
+    
+    
+    <Button
+        android:id="@+id/btnSacuvajBroj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
+        android:layout_weight="3"
+        android:background="@drawable/rectangle1"
+        android:hint="Sačuvaj željeni broj"
+        android:text="SAČUVAJ"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+    
+     <Button
+        android:id="@+id/btnNazadRodjendan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30sp"
+        android:layout_marginTop="20sp"
+        android:layout_weight="3"
+        android:background="@drawable/rectangle1"
+        android:hint="Sačuvaj željeni broj"
+        android:text="NAZAD"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+    
+    
+    
+    </LinearLayout>
