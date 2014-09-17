@@ -41,14 +41,18 @@
 
     <Button
         android:id="@+id/izaberiDatum"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:text="Izaberi datum" />
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/rectangle2"
+        android:text="IZABERI DATUM"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtDatumTV"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
         android:layout_weight="1"
         android:textColor="@color/White"
         android:textSize="30sp"
@@ -56,17 +60,21 @@
 
     <Button
         android:id="@+id/izaberiVreme"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:text="Izaberi vreme" />
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/rectangle2"
+        android:text="IZABERI VREME"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtVremeTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
         android:layout_weight="1"
-        android:textSize="30sp"
         android:textColor="@color/White"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <Button
@@ -76,7 +84,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20sp"
         android:layout_weight="3"
-        android:background="@drawable/rectangle1"
+        android:background="@drawable/rectangle2"
         android:hint="Sačuvaj željeni broj"
         android:text="SAČUVAJ"
         android:textSize="30sp"
@@ -90,7 +98,7 @@
         android:layout_marginBottom="30sp"
         android:layout_marginTop="20sp"
         android:layout_weight="3"
-        android:background="@drawable/rectangle1"
+        android:background="@drawable/rectangle2"
         android:hint="Sačuvaj željeni broj"
         android:text="NAZAD"
         android:textSize="30sp"

@@ -63,14 +63,18 @@
 
     <Button
         android:id="@+id/izaberiDatum"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:text="Izaberi datum" />
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/rectangle2"
+        android:text="IZABERI DATUM"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtDatumR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
         android:layout_weight="4"
         android:textColor="@color/White"
         android:textSize="30sp"
