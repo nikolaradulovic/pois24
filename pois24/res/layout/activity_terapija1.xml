@@ -55,6 +55,7 @@
         android:id="@+id/combo_kada"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:entries="@array/spinner1Items"
         android:layout_weight="6" />
     
      <TextView
@@ -73,6 +74,7 @@
         android:id="@+id/combo_koliko"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:entries="@array/spinner2Items"
         android:layout_weight="6" />
      
      <TextView
