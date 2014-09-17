@@ -12,6 +12,10 @@ public class StetoskopActivity extends ActionBarActivity {
 
 	Button btnBack;
 	Button terapija;
+	Button terapija2;
+	Button terapija3;
+	Button terapija4;
+	Button terapija5;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +23,11 @@ public class StetoskopActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_stetoskop);
 		
 		btnBack = (Button) findViewById(R.id.btnBackTerapija);
-		terapija= (Button)  findViewById(R.id.btnTerapija1);
+		terapija  = (Button)  findViewById(R.id.btnTerapija1);
+		terapija2 = (Button)  findViewById(R.id.btnTerapija2);
+		terapija3 = (Button)  findViewById(R.id.btnTerapija3);
+		terapija4 = (Button)  findViewById(R.id.btnTerapija4);
+		terapija5 = (Button)  findViewById(R.id.btnTerapija5);
 		
 		btnBack.setOnClickListener(new View.OnClickListener() {
 			   @Override
