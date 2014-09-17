@@ -3,6 +3,7 @@ package com.example.pois24;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.app.DialogFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -17,10 +18,10 @@ import android.widget.TimePicker;
 import android.os.Build;
 
 public class TvProgramActivity extends ActionBarActivity {
-	
+
 	TextView naslov, naziv, datum, vreme;
 	EditText unos;
-	Button nazad, sacuvaj;
+	Button nazad, sacuvaj, dajDatum, dajVreme;
 	DatePicker datumP;
 	TimePicker vremeP;
 
@@ -28,28 +29,49 @@ public class TvProgramActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tv_program);
-		
+
 		naslov = (TextView) findViewById(R.id.txtTVNaslov);
 		naziv = (TextView) findViewById(R.id.txtTVIme);
 		unos = (EditText) findViewById(R.id.edtTVUnos);
-		datum  = (TextView) findViewById(R.id.txtTVDatum);
-		datumP  = (DatePicker) findViewById(R.id.dpDatum);
+		datum = (TextView) findViewById(R.id.txtTVDatum);
+		// datumP = (DatePicker) findViewById(R.id.dpDatum);
 		vreme = (TextView) findViewById(R.id.txtTVVreme);
-		vremeP = (TimePicker) findViewById(R.id.tpVreme);
-		sacuvaj = (Button)  findViewById(R.id.btnSacuvajBroj);
+		// vremeP = (TimePicker) findViewById(R.id.tpVreme);
+		sacuvaj = (Button) findViewById(R.id.btnSacuvajBroj);
 		nazad = (Button) findViewById(R.id.btnNazadRodjendan);
-		
-		nazad.setOnClickListener(new View.OnClickListener() {
-			   @Override
-			   public void onClick(View v) {
-			      finish();
-			   }
-			  });
+		dajDatum = (Button) findViewById(R.id.izaberiDatum);
+		dajVreme = (Button) findViewById(R.id.izaberiVreme);
 
-		//if (savedInstanceState == null) {
-			//getSupportFragmentManager().beginTransaction()
-				//	.add(R.id.container, new PlaceholderFragment()).commit();
-		//}
+		nazad.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+
+		// if (savedInstanceState == null) {
+		// getSupportFragmentManager().beginTransaction()
+		// .add(R.id.container, new PlaceholderFragment()).commit();
+		// }
+		dajDatum.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				DialogFragment newFragment = new Datum();
+				newFragment.show(getFragmentManager(), "datePicker");
+			}
+		});
+
+		dajVreme.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				DialogFragment newFragment = new Vreme();
+				newFragment.show(getFragmentManager(), "timePicker");
+			}
+		});
 	}
 
 	@Override
@@ -75,18 +97,18 @@ public class TvProgramActivity extends ActionBarActivity {
 	/**
 	 * A placeholder fragment containing a simple view.
 	 */
-	//public static class PlaceholderFragment extends Fragment {
+	// public static class PlaceholderFragment extends Fragment {
 
-		//public PlaceholderFragment() {
-		//}
+	// public PlaceholderFragment() {
+	// }
 
-		//@Override
-		//public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			//	Bundle savedInstanceState) {
-			//View rootView = inflater.inflate(R.layout.fragment_tv_program,
-				//	container, false);
-			//return rootView;
-		//}
-	//}
+	// @Override
+	// public View onCreateView(LayoutInflater inflater, ViewGroup container,
+	// Bundle savedInstanceState) {
+	// View rootView = inflater.inflate(R.layout.fragment_tv_program,
+	// container, false);
+	// return rootView;
+	// }
+	// }
 
 }
