@@ -5,12 +5,21 @@ import java.util.Calendar;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.TextView;
 
 public class Datum extends DialogFragment implements
 		DatePickerDialog.OnDateSetListener {
+
+	char x;
+
+	public Datum(char x) {
+		// TODO Auto-generated constructor stub
+		this.x = x;
+	}
 
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -26,6 +35,17 @@ public class Datum extends DialogFragment implements
 
 	public void onDateSet(DatePicker view, int year, int month, int day) {
 		// Do something with the date chosen by the user
+		// String datum = year + " " + month + " " + day;
+		if (x == 'R') {
+			RodjendanActivity.staviDatum
+					.setText(year + " " + month + " " + day);
+		} else if (x == 'P') {
+			PreglediActivity.staviDatum.setText(year + "/ " + month + "/ " + day);
+		} else if (x == 'T') {
+			TvProgramActivity.staviDatum
+					.setText(year + "/ " + month + "/ " + day);
+		}
+
 	}
 
 }

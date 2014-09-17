@@ -24,23 +24,26 @@ public class TvProgramActivity extends ActionBarActivity {
 	Button nazad, sacuvaj, dajDatum, dajVreme;
 	DatePicker datumP;
 	TimePicker vremeP;
+	static TextView staviVreme, staviDatum;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tv_program);
 
-		naslov = (TextView) findViewById(R.id.txtTVNaslov);
-		naziv = (TextView) findViewById(R.id.txtTVIme);
+		// naslov = (TextView) findViewById(R.id.txtTVNaslov);
+		// naziv = (TextView) findViewById(R.id.txtTVIme);
 		unos = (EditText) findViewById(R.id.edtTVUnos);
-		datum = (TextView) findViewById(R.id.txtTVDatum);
+		// datum = (TextView) findViewById(R.id.txtTVDatum);
 		// datumP = (DatePicker) findViewById(R.id.dpDatum);
-		vreme = (TextView) findViewById(R.id.txtTVVreme);
+		// vreme = (TextView) findViewById(R.id.txtTVVreme);
 		// vremeP = (TimePicker) findViewById(R.id.tpVreme);
 		sacuvaj = (Button) findViewById(R.id.btnSacuvajBroj);
 		nazad = (Button) findViewById(R.id.btnNazadRodjendan);
 		dajDatum = (Button) findViewById(R.id.izaberiDatum);
 		dajVreme = (Button) findViewById(R.id.izaberiVreme);
+		staviDatum = (TextView) findViewById(R.id.txtDatumTV);
+		staviVreme = (TextView) findViewById(R.id.txtVremeTV);
 
 		nazad.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -58,7 +61,7 @@ public class TvProgramActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				DialogFragment newFragment = new Datum();
+				DialogFragment newFragment = new Datum('T');
 				newFragment.show(getFragmentManager(), "datePicker");
 			}
 		});
@@ -68,7 +71,7 @@ public class TvProgramActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				DialogFragment newFragment = new Vreme();
+				DialogFragment newFragment = new Vreme('T');
 				newFragment.show(getFragmentManager(), "timePicker");
 			}
 		});

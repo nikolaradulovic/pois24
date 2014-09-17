@@ -19,6 +19,7 @@ import android.os.Build;
 
 public class PreglediActivity extends ActionBarActivity {
 
+	static TextView staviDatum, staviVreme;
 	TextView naslov, ime, datum, vreme;
 	EditText unos;
 	TimePicker vremeP;
@@ -35,19 +36,21 @@ public class PreglediActivity extends ActionBarActivity {
 		unos = (EditText) findViewById(R.id.edtPregledUnos);
 		// datum = (TextView) findViewById(R.id.txtDatum);
 		// datumP = (DatePicker) findViewById(R.id.dpDatumPr);
-		vreme = (TextView) findViewById(R.id.txtVreme);
+		// vreme = (TextView) findViewById(R.id.txtVreme);
 		// vremeP = (TimePicker) findViewById(R.id.tpVremePr);
 		sacuvaj = (Button) findViewById(R.id.btnSacuvajBroj);
 		nazad = (Button) findViewById(R.id.btnNazadRodjendan);
 		dajDatum = (Button) findViewById(R.id.izaberiDatum);
 		dajVreme = (Button) findViewById(R.id.izaberiVreme);
+		staviDatum = (TextView) findViewById(R.id.txtDatumPr);
+		staviVreme = (TextView) findViewById(R.id.txtVremeP);
 
 		dajVreme.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				DialogFragment newFragment = new Vreme();
+				DialogFragment newFragment = new Vreme('P');
 				newFragment.show(getFragmentManager(), "timePicker");
 			}
 		});
@@ -64,7 +67,7 @@ public class PreglediActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				DialogFragment newFragment = new Datum();
+				DialogFragment newFragment = new Datum('P');
 				newFragment.show(getFragmentManager(), "datePicker");
 			}
 		});

@@ -12,6 +12,12 @@ import android.widget.TimePicker;
 public class Vreme extends DialogFragment implements
 		TimePickerDialog.OnTimeSetListener {
 
+	char x;
+
+	public Vreme(char x) {
+		this.x = x;
+	}
+
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		// Use the current time as the default values for the picker
@@ -26,5 +32,10 @@ public class Vreme extends DialogFragment implements
 
 	public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 		// Do something with the time chosen by the user
+		if (x == 'P') {
+			PreglediActivity.staviVreme.setText(hourOfDay + " : " + minute);
+		} else if (x == 'T') {
+			TvProgramActivity.staviVreme.setText(hourOfDay + " : " + minute);
+		}
 	}
 }

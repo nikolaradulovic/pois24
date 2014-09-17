@@ -45,15 +45,12 @@
         android:text="Izaberi datum" />
 
     <TextView
-        android:id="@+id/txtVreme"
-        android:layout_width="fill_parent"
+        android:id="@+id/txtDatumPr"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10sp"
-        android:layout_marginTop="5sp"
-        android:layout_weight="2"
-        android:text="VREME:"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:layout_weight="1"
+        android:textColor="@color/White"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <Button
@@ -61,7 +58,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Izaberi vreme" />
-    
+
+    <TextView
+        android:id="@+id/txtVremeP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/White"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/btnSacuvajBroj"
         android:layout_width="wrap_content"

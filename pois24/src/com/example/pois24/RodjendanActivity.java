@@ -18,6 +18,7 @@ import android.os.Build;
 
 public class RodjendanActivity extends ActionBarActivity {
 
+	static TextView staviDatum;
 	TextView naslov, izbor, ime, prezime;
 	EditText unosIme, unosPrezime;
 	DatePicker datum;
@@ -29,7 +30,7 @@ public class RodjendanActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_rodjendan);
 
 		naslov = (TextView) findViewById(R.id.txtRodjendanTitle);
-		izbor = (TextView) findViewById(R.id.txtIzaberiDatum);
+		// izbor = (TextView) findViewById(R.id.txtIzaberiDatum);
 		ime = (TextView) findViewById(R.id.txtIme);
 		unosIme = (EditText) findViewById(R.id.editUnosIme);
 		prezime = (TextView) findViewById(R.id.txtPrezime);
@@ -38,6 +39,7 @@ public class RodjendanActivity extends ActionBarActivity {
 		sacuvaj = (Button) findViewById(R.id.btnSacuvajBroj);
 		nazad = (Button) findViewById(R.id.btnNazadRodjendan);
 		dajDatum = (Button) findViewById(R.id.izaberiDatum);
+		staviDatum = (TextView) findViewById(R.id.txtDatumR);
 
 		nazad.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -51,8 +53,10 @@ public class RodjendanActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				DialogFragment newFragment = new Datum();
+				
+				DialogFragment newFragment = new Datum('R');
 				newFragment.show(getFragmentManager(), "datePicker");
+
 			}
 		});
 

@@ -39,23 +39,20 @@
         android:ems="30" >
     </EditText>
 
-    <TextView
-        android:id="@+id/txtTVDatum"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10sp"
-        android:layout_marginTop="5sp"
-        android:layout_weight="1"
-        android:text="DATUM:"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
     <Button
         android:id="@+id/izaberiDatum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Izaberi datum" />
+
+    <TextView
+        android:id="@+id/txtDatumTV"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/White"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/izaberiVreme"
@@ -64,15 +61,12 @@
         android:text="Izaberi vreme" />
 
     <TextView
-        android:id="@+id/txtTVVreme"
-        android:layout_width="fill_parent"
+        android:id="@+id/txtVremeTV"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10sp"
-        android:layout_marginTop="5sp"
         android:layout_weight="1"
-        android:text="VREME:"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="30sp"
+        android:textColor="@color/White"
         android:textStyle="bold" />
 
     <Button
