@@ -1,16 +1,19 @@
 package com.example.pois24;
 
+import java.io.File;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Environment;
 import android.util.Log;
 
 public class SQLitePrimeriPoruka extends SQLiteOpenHelper {
 
 	private static final int DATABASE_VERSION = 1;
-	private static final String DATABASE_NAME = "PrimeriPorukaX";
+	private static final String DATABASE_NAME = "PrimeriPorukaF";
 	private static final String TABLE_PRIMERI = "primeri";
 
 	// private static final String DATABASE_PATH =
@@ -19,7 +22,9 @@ public class SQLitePrimeriPoruka extends SQLiteOpenHelper {
 	private static final String[] COLUMNS = { "id", "primerID" };
 
 	public SQLitePrimeriPoruka(Context context) {
-		super(context, DATABASE_NAME, null, DATABASE_VERSION);
+		super(context, Environment.getExternalStorageDirectory()
+				+ File.separator + "baze" + File.separator + DATABASE_NAME,
+				null, DATABASE_VERSION);
 	}
 
 	@Override
@@ -98,4 +103,5 @@ public class SQLitePrimeriPoruka extends SQLiteOpenHelper {
 		db.close();
 		return broj;
 	}
+
 }

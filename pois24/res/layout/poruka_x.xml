@@ -68,9 +68,10 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/rectangle2"
+                android:background="@drawable/rectangle"
                 android:text="SAČUVAJ PORUKU"
                 android:textAlignment="center"
+                android:textColor="@color/White"
                 android:textSize="22sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -89,9 +90,10 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.5"
-                android:background="@drawable/rectangle2"
+                android:background="@drawable/rectangle"
                 android:text="NAZAD"
                 android:textAlignment="center"
+                android:textColor="@color/White"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -101,9 +103,10 @@
                 android:layout_height="fill_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.5"
-                android:background="@drawable/rectangle2"
+                android:background="@drawable/rectangle"
                 android:text="POŠALJI"
                 android:textAlignment="center"
+                android:textColor="@color/White"
                 android:textSize="22sp"
                 android:textStyle="bold" />
         </LinearLayout>

@@ -1,12 +1,16 @@
 package com.example.pois24;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -18,7 +22,7 @@ public class PorukaActivity extends ActionBarActivity {
 	Button back;
 	ListView lista;
 	SQLitePrimeriPoruka db;
-
+	private Handler mHandler = new Handler();
 	int brojPoruka = 10;
 
 	LinkedList<Intent> listaIntentova = new LinkedList<Intent>();
@@ -41,14 +45,24 @@ public class PorukaActivity extends ActionBarActivity {
 		napuniListuIntentova();
 		setContentView(R.layout.activity_poruka);
 		db = new SQLitePrimeriPoruka(this);
+
 		initialize();
+		final Animation animDugme = AnimationUtils.loadAnimation(this,
+				R.anim.anim_alpha);
 
 		back.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				finish();
+				v.startAnimation(animDugme);
+				mHandler.postDelayed(new Runnable() {
+
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						finish();
+					}
+				}, 260);
 			}
 		});
 
@@ -75,16 +89,45 @@ public class PorukaActivity extends ActionBarActivity {
 		back = (Button) findViewById(R.id.btnBack);
 		lista = (ListView) findViewById(R.id.listaPoruka);
 
-		String[] poruke = new String[10];
-		for (int i = 1; i < poruke.length; i++) {
-			if (db.vratiPrimer(i) != null) {
-				poruke[i] = db.vratiPrimer(i);
-			
-			}
+		if (db.vratiBrojPrimera() == 0) {
+			db.dodajPrimer("Hitno me pozovi!");
+			db.dodajPrimer("Kupi mi tri kesice fervexa");
+			db.dodajPrimer("Spremila sam pihtije pozuri!");
+			db.dodajPrimer("Kupi mi kurir!");
+			db.dodajPrimer("Svaka cast vucicu, digli nam penzije");
+			db.dodajPrimer("Kupi tri kile krompira i dve kile luka, pravim musaku danas");
+			db.dodajPrimer("Kupi mi novine i crveni Best 100s");
+			db.dodajPrimer("Ispekli smo 10 litara rakije");
+			db.dodajPrimer("Ako dobijes 10ku baba ce ti da 1000dinara");
+			db.dodajPrimer("Opet nam curi odozgo, zovi majstore!");
 		}
+
+		int duzina = db.vratiBrojPrimera();
+		String[] poruke = new String[] { db.vratiPrimer(1), db.vratiPrimer(2),
+				db.vratiPrimer(3), db.vratiPrimer(4), db.vratiPrimer(5),
+				db.vratiPrimer(6), db.vratiPrimer(7), db.vratiPrimer(8),
+				db.vratiPrimer(9), db.vratiPrimer(10)
+
+		};
+		// for (int i = 0; i < duzina - 1; i++) {
+		// if (db.vratiPrimer(i) != null) {
+		// poruke[i] = db.vratiPrimer(i + 1);
+		//
+		// }
+		// }
+
+		// LinkedList<String> listaItema = new LinkedList<String>();
+		// for (int i = 1; i < listaItema.size(); i++) {
+		// if (db.vratiPrimer(i) != null) {
+		// listaItema.add(db.vratiPrimer(i));
+		// }
+		// }
 
 		ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
 				R.layout.activity_listview, poruke);
+
+		// ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
+		// R.layout.activity_listview, listaItema);
 
 		lista.setAdapter(adapter1);
 	}

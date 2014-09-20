@@ -27,8 +27,9 @@
             android:layout_height="80dp"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
-            android:background="@drawable/rectangle2"
+            android:background="@drawable/rectangle"
             android:text="NAZAD"
+            android:textColor="@color/White"
             android:textSize="23sp"
             android:textStyle="bold" />
 
@@ -38,8 +39,9 @@
             android:layout_height="80dp"
             android:layout_marginLeft="4dp"
             android:layout_weight="1"
-            android:background="@drawable/rectangle2"
+            android:background="@drawable/rectangle"
             android:text="OK"
+            android:textColor="@color/White"
             android:textSize="23sp"
             android:textStyle="bold" />
     </LinearLayout>

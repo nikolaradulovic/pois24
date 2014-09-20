@@ -7,19 +7,19 @@
     android:orientation="vertical"
     android:weightSum="13"
     tools:context="com.example.pois24.StetoskopActivity"
-    tools:ignore="MergeRootFrame" 
-    >
+    tools:ignore="MergeRootFrame" >
 
     <Button
         android:id="@+id/btnTerapija1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="20dp"
-        android:layout_weight="2"
         android:layout_marginRight="20dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/rectangle2"
+        android:layout_weight="2"
+        android:background="@drawable/rectangle"
         android:text="@string/TERAPIJA1"
+        android:textColor="@color/White"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -27,12 +27,13 @@
         android:id="@+id/btnTerapija2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="18dp"
-        android:background="@drawable/rectangle2"
+        android:layout_weight="2"
+        android:background="@drawable/rectangle"
         android:text="@string/TERAPIJA2"
+        android:textColor="@color/White"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -40,12 +41,13 @@
         android:id="@+id/btnTerapija3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="18dp"
-        android:background="@drawable/rectangle2"
+        android:layout_weight="2"
+        android:background="@drawable/rectangle"
         android:text="@string/TERAPIJA3"
+        android:textColor="@color/White"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -53,12 +55,13 @@
         android:id="@+id/btnTerapija4"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="18dp"
-        android:background="@drawable/rectangle2"
+        android:layout_weight="2"
+        android:background="@drawable/rectangle"
         android:text="@string/TERAPIJA4"
+        android:textColor="@color/White"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -66,12 +69,13 @@
         android:id="@+id/btnTerapija5"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="18dp"
-        android:background="@drawable/rectangle2"
+        android:layout_weight="2"
+        android:background="@drawable/rectangle"
         android:text="@string/TERAPIJA5"
+        android:textColor="@color/White"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -79,10 +83,10 @@
         android:id="@+id/btnBackTerapija"
         android:layout_width="90dp"
         android:layout_height="0dp"
-        android:layout_weight="3"
         android:layout_gravity="center"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
+        android:layout_weight="3"
         android:background="@drawable/btn_back" />
 
 </LinearLayout>
