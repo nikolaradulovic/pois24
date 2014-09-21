@@ -1,13 +1,12 @@
 package com.example.pois24;
 
 import java.util.LinkedList;
-import java.util.List;
+import baze.SQLitePrimeriPoruka;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -109,25 +108,9 @@ public class PorukaActivity extends ActionBarActivity {
 				db.vratiPrimer(9), db.vratiPrimer(10)
 
 		};
-		// for (int i = 0; i < duzina - 1; i++) {
-		// if (db.vratiPrimer(i) != null) {
-		// poruke[i] = db.vratiPrimer(i + 1);
-		//
-		// }
-		// }
-
-		// LinkedList<String> listaItema = new LinkedList<String>();
-		// for (int i = 1; i < listaItema.size(); i++) {
-		// if (db.vratiPrimer(i) != null) {
-		// listaItema.add(db.vratiPrimer(i));
-		// }
-		// }
 
 		ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
 				R.layout.activity_listview, poruke);
-
-		// ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
-		// R.layout.activity_listview, listaItema);
 
 		lista.setAdapter(adapter1);
 	}

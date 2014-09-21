@@ -10,12 +10,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 public class MainActivity extends ActionBarActivity {
 
 	Button sat, poruka, stetoskop, poziv, podesavanja;
+	private Handler mHandler = new Handler();
 
 	// KOMENTAAAAAAAAAAAAAAAAAAAAAARRRRRRRRRRRRRRRRRRRRRRRRR!!!!!!!!!!!!!!!!!!!!!!
 	@Override
@@ -25,15 +29,26 @@ public class MainActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_main);
 
 		initialize();
+		final Animation animDugme = AnimationUtils.loadAnimation(this,
+				R.anim.anim_alpha);
 
 		podesavanja.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent openPodesavanjaActivity = new Intent(
-						"com.example.pois24.PODESAVANJA");
-				startActivity(openPodesavanjaActivity);
+				v.startAnimation(animDugme);
+				mHandler.postDelayed(new Runnable() {
+
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						// TODO Auto-generated method stub
+						Intent openPodesavanjaActivity = new Intent(
+								"com.example.pois24.PODESAVANJA");
+						startActivity(openPodesavanjaActivity);
+					}
+				}, 260);
+
 			}
 		});
 
@@ -41,6 +56,7 @@ public class MainActivity extends ActionBarActivity {
 
 			@Override
 			public void onClick(View v) {
+
 				// TODO Auto-generated method stub
 				Intent openSatActivity = new Intent("com.example.pois24.SAT");
 				startActivity(openSatActivity);
@@ -118,6 +134,7 @@ public class MainActivity extends ActionBarActivity {
 		stetoskop = (Button) findViewById(R.id.btnStetoskop);
 		poziv = (Button) findViewById(R.id.btnPoziv);
 		podesavanja = (Button) findViewById(R.id.btnPodesavanja);
+
 	}
 
 	public Uri vratiBroj() {

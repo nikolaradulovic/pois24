@@ -66,8 +66,9 @@
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:background="@drawable/rectangle2"
+        android:background="@drawable/rectangle"
         android:text="IZABERI DATUM"
+        android:textColor="@color/White"
         android:textStyle="bold" />
 
     <TextView
@@ -87,9 +88,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="20sp"
         android:layout_weight="1"
-        android:background="@drawable/rectangle1"
+        android:background="@drawable/rectangle"
         android:hint="Sačuvaj željeni broj"
         android:text="SAČUVAJ"
+        android:textColor="@color/White"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -101,9 +103,10 @@
         android:layout_marginBottom="30sp"
         android:layout_marginTop="20sp"
         android:layout_weight="1"
-        android:background="@drawable/rectangle1"
+        android:background="@drawable/rectangle"
         android:hint="Sačuvaj željeni broj"
         android:text="NAZAD"
+        android:textColor="@color/White"
         android:textSize="30sp"
         android:textStyle="bold" />
 

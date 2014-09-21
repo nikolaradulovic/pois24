@@ -35,16 +35,27 @@ public class SatActivity extends ActionBarActivity {
 					@Override
 					public void run() {
 						// TODO Auto-generated method stub
-						finish();
+						Intent openLista = new Intent(
+								"com.example.pois24.podaci");
+						startActivity(openLista);
 					}
 				}, 260);
 			}
 		});
 
 		nazad.setOnClickListener(new View.OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
-				finish();
+				v.startAnimation(animDugme);
+				mHandler.postDelayed(new Runnable() {
+
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						finish();
+					}
+				}, 260);
 			}
 		});
 

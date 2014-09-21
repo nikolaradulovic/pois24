@@ -1,4 +1,4 @@
-package com.example.pois24;
+package baze;
 
 import java.io.File;
 

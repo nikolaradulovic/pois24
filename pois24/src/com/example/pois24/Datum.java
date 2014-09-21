@@ -35,14 +35,13 @@ public class Datum extends DialogFragment implements
 		// String datum = year + " " + month + " " + day;
 
 		if (x == 'R') {
-			RodjendanActivity.staviDatum.setText(year + "/ " + month + "/ "
-					+ day);
+			RodjendanActivity.staviDatum
+					.setText(year + "/" + month + "/" + day);
 		} else if (x == 'P') {
-			PreglediActivity.staviDatum.setText(year + "/ " + month + "/ "
-					+ day);
+			PreglediActivity.staviDatum.setText(year + "/" + month + "/" + day);
 		} else if (x == 'T') {
-			TvProgramActivity.staviDatum.setText(year + "/ " + month + "/ "
-					+ day);
+			TvProgramActivity.staviDatum
+					.setText(year + "/" + month + "/" + day);
 		}
 
 	}

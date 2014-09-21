@@ -5,11 +5,14 @@ import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.app.DialogFragment;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -25,6 +28,7 @@ public class PreglediActivity extends ActionBarActivity {
 	TimePicker vremeP;
 	DatePicker datumP;
 	Button sacuvaj, nazad, dajDatum, dajVreme;
+	private Handler mHandler = new Handler();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,8 @@ public class PreglediActivity extends ActionBarActivity {
 		dajVreme = (Button) findViewById(R.id.izaberiVreme);
 		staviDatum = (TextView) findViewById(R.id.txtDatumPr);
 		staviVreme = (TextView) findViewById(R.id.txtVremeP);
+		final Animation animDugme = AnimationUtils.loadAnimation(this,
+				R.anim.anim_alpha);
 
 		dajVreme.setOnClickListener(new View.OnClickListener() {
 
@@ -58,7 +64,15 @@ public class PreglediActivity extends ActionBarActivity {
 		nazad.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				finish();
+				v.startAnimation(animDugme);
+				mHandler.postDelayed(new Runnable() {
+
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						finish();
+					}
+				}, 260);
 			}
 		});
 
@@ -72,10 +86,21 @@ public class PreglediActivity extends ActionBarActivity {
 			}
 		});
 
-		// if (savedInstanceState == null) {
-		// getSupportFragmentManager().beginTransaction()
-		// .add(R.id.container, new PlaceholderFragment()).commit();
-		// }
+		sacuvaj.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				v.startAnimation(animDugme);
+				mHandler.postDelayed(new Runnable() {
+
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+
+					}
+				}, 260);
+			}
+		});
 	}
 
 	@Override
