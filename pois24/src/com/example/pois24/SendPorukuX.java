@@ -29,7 +29,7 @@ public class SendPorukuX extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.poruka_x);
+		setContentView(R.layout.activity_2poruka_x);
 		initialize();
 		final Animation animDugme = AnimationUtils.loadAnimation(this,
 				R.anim.anim_alpha);
