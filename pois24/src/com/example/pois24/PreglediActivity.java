@@ -33,7 +33,7 @@ public class PreglediActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_pregledi);
+		setContentView(R.layout.activity_1pregledi);
 
 		naslov = (TextView) findViewById(R.id.txtPregledNaslov);
 		ime = (TextView) findViewById(R.id.txtPregledIme);

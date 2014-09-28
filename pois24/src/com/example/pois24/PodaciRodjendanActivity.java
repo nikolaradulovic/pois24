@@ -15,7 +15,7 @@ public class PodaciRodjendanActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_podaci_rodjendan);
+		setContentView(R.layout.activity_1podaci_rodjendan);
 		db = new SQLiteRodjendani(this);
 		inicijalizuj();
 

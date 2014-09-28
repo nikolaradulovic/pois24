@@ -20,7 +20,7 @@ public class SatActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_sat);
+		setContentView(R.layout.activity_1sat);
 		initialize();
 		final Animation animDugme = AnimationUtils.loadAnimation(this,
 				R.anim.anim_alpha);

@@ -33,7 +33,7 @@ public class TvProgramActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_tv_program);
+		setContentView(R.layout.activity_1tv_program);
 
 		// naslov = (TextView) findViewById(R.id.txtTVNaslov);
 		// naziv = (TextView) findViewById(R.id.txtTVIme);

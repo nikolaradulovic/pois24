@@ -24,7 +24,7 @@ public class StetoskopActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_stetoskop);
+		setContentView(R.layout.activity_3stetoskop);
 
 		btnBack = (Button) findViewById(R.id.btnBackTerapija);
 		terapija = (Button) findViewById(R.id.btnTerapija1);

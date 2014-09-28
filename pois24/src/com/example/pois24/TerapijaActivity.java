@@ -32,7 +32,7 @@ public class TerapijaActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setTitle("Podesavanja terapije");
-		setContentView(R.layout.activity_terapija1);
+		setContentView(R.layout.activity_3terapija1);
 
 		naslov = (TextView) findViewById(R.id.terapijaNaziv);
 		unos = (EditText) findViewById(R.id.unesiTxt);

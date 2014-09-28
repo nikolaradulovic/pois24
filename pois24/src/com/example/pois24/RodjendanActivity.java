@@ -34,7 +34,7 @@ public class RodjendanActivity extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_rodjendan);
+		setContentView(R.layout.activity_1rodjendan);
 
 		naslov = (TextView) findViewById(R.id.txtRodjendanTitle);
 		ime = (TextView) findViewById(R.id.txtIme);

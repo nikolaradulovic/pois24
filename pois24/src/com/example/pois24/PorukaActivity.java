@@ -42,7 +42,7 @@ public class PorukaActivity extends ActionBarActivity {
 		setTitle("Slanje hitnih poruka");
 		getSupportActionBar().setIcon(R.drawable.slika11);
 		napuniListuIntentova();
-		setContentView(R.layout.activity_poruka);
+		setContentView(R.layout.activity_2poruka);
 		db = new SQLitePrimeriPoruka(this);
 
 		initialize();

@@ -1,7 +1,6 @@
 package baze;
 
 import java.io.File;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -12,7 +11,7 @@ import android.os.Environment;
 public class SQLiteRodjendani extends SQLiteOpenHelper {
 
 	private static final int DATABASE_VERSION = 1;
-	private static final String DATABASE_NAME = "RodjendaniXX";
+	private static final String DATABASE_NAME = "RodjendaniXXX";
 	private static final String TABLE_RODJENDANI = "Rodjendani";
 
 	// private static final String DATABASE_PATH =
@@ -103,6 +102,7 @@ public class SQLiteRodjendani extends SQLiteOpenHelper {
 		cursor.close();
 		db.close();
 		return broj;
+
 	}
 
 }

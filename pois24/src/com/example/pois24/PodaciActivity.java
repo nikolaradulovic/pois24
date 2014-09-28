@@ -18,7 +18,7 @@ public class PodaciActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_podaci);
+		setContentView(R.layout.activity_1podaci);
 		final Animation animDugme = AnimationUtils.loadAnimation(this,
 				R.anim.anim_alpha);
 
@@ -30,11 +30,10 @@ public class PodaciActivity extends ActionBarActivity {
 			public void onClick(View v) {
 				v.startAnimation(animDugme);
 				mHandler.postDelayed(new Runnable() {
-					
+
 					@Override
 					public void run() {
-						Intent i1 = new Intent(
-								"com.example.pois24.podaciRodj");
+						Intent i1 = new Intent("com.example.pois24.podaciRodj");
 						startActivity(i1);
 					}
 				}, 260);
