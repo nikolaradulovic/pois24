@@ -39,7 +39,7 @@
         android:ems="30" />
 
     <Button
-        android:id="@+id/izaberiDatum"
+        android:id="@+id/izaberiDane"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"

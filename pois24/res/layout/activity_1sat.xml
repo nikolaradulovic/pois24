@@ -6,7 +6,7 @@
     android:background="@drawable/pozadina1"
     android:orientation="vertical"
     android:weightSum="12"
-    tools:context="com.example.pois24.SatActivity"
+    tools:context="com.example.pois24.Sat.SatActivity"
     tools:ignore="MergeRootFrame" >
 
     <TextView

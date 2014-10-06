@@ -2,15 +2,16 @@
 <resources>
 
     <string name="action_settings" translatable="false">Settings</string>
-    <string name="appName">Naslov</string>
+    <string name="appName">Pomoć starijima</string>
     <string name="title_activity_sat">SatActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_poruka">PorukaActivity</string>
     <string name="title_activity_stetoskop">StetoskopActivity</string>
     <string name="title_activity_poziv">PozivActivity</string>
     <string name="title_activity_podesavanja">PodesavanjaActivity</string>
-    <string name="title_activity_lista">PodaciActivity</string>
-    <string name="title_activity_listaR">PodaciRodjendanActivity</string>
+    <string name="title_activity_lista">Svi podaci</string>
+    <string name="title_activity_listaR">Podaci o rodjendanima</string>
+    <string name="title_activity_listaTV">Podaci o TV programima</string>
     <string name="podesavanja">Podesavanja</string>
     <string name="TERAPIJA1">TERAPIJA 1</string>
     <string name="TERAPIJA2">TERAPIJA 2</string>

@@ -6,7 +6,7 @@
     android:background="@drawable/pozadina1"
     android:orientation="vertical"
     android:padding="15dp"
-    tools:context="com.example.pois24.PorukaActivity"
+    tools:context="com.example.pois24.Poruka.PorukaActivity"
     tools:ignore="HardcodedText" >
 
     <ListView
