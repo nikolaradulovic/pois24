@@ -1,0 +1,49 @@
+package com.example.pois24;
+
+import java.util.List;
+
+import com.example.pois24.Sat._Rodjendan;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
+
+public class CustomAdapter extends ArrayAdapter<_Rodjendan> {
+
+	public CustomAdapter(Context context, int resource, int textViewResourceId,
+			List<_Rodjendan> rodjendani) {
+		super(context, resource, textViewResourceId, rodjendani);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		// TODO Auto-generated method stub
+
+		View v = convertView;
+
+		if (v == null) {
+			LayoutInflater vi;
+			vi = LayoutInflater.from(getContext());
+			v = vi.inflate(R.layout.list_row, null);
+		}
+
+		_Rodjendan r = getItem(position);
+
+		if (r != null) {
+			TextView tv1 = (TextView) v.findViewById(R.id.title);
+
+			if (tv1 != null) {
+				tv1.setText(r.getIme() + r.getPrezime() + r.getDay()
+						+ r.getMonth());
+			}
+		}
+
+		return v;
+
+	}
+}

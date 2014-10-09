@@ -33,12 +33,12 @@ public class Datum extends DialogFragment implements
 	public void onDateSet(DatePicker view, int year, int month, int day) {
 		// Do something with the date chosen by the user
 		// String datum = year + " " + month + " " + day;
+		int m = month + 1;
 
 		if (x == 'R') {
-			RodjendanActivity.staviDatum
-					.setText(year + "/" + month + "/" + day);
+			RodjendanActivity.staviDatum.setText(day + "/" + m + "/" + year);
 		} else if (x == 'P') {
-			PreglediActivity.staviDatum.setText(year + "/" + month + "/" + day);
+			PreglediActivity.staviDatum.setText(day + "/" + m + "/" + year);
 		}
 
 	}

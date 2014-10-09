@@ -93,11 +93,19 @@ public class RodjendanActivity extends ActionBarActivity {
 					@Override
 					public void run() {
 						// TODO Auto-generated method stub
-						db.dodajRodjendan(i, p, d);
-						Toast t1 = Toast.makeText(getApplicationContext(),
-								"Uspešno ste uneli rodjendan",
-								Toast.LENGTH_LONG);
-						t1.show();
+						if (i.equals("") || p.equals("") || d.equals("")) {
+							Toast t2 = Toast.makeText(getApplicationContext(),
+									"Niste uneli sve podatke",
+									Toast.LENGTH_LONG);
+							t2.show();
+						} else {
+							db.dodajRodjendan(i, p, d);
+							Toast t1 = Toast.makeText(getApplicationContext(),
+									"Uspešno ste uneli rodjendan",
+									Toast.LENGTH_LONG);
+							t1.show();
+						}
+
 					}
 				}, 260);
 			}

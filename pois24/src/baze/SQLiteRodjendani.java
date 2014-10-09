@@ -11,7 +11,7 @@ import android.os.Environment;
 public class SQLiteRodjendani extends SQLiteOpenHelper {
 
 	private static final int DATABASE_VERSION = 1;
-	private static final String DATABASE_NAME = "RodjendaniXXX";
+	private static final String DATABASE_NAME = "RodjendaniRX";
 	private static final String TABLE_RODJENDANI = "Rodjendani";
 
 	// private static final String DATABASE_PATH =
@@ -75,6 +75,14 @@ public class SQLiteRodjendani extends SQLiteOpenHelper {
 		db.close();
 	}
 
+	public void obrisiRodjendan(int id) {
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		db.delete(TABLE_RODJENDANI, "id=?", new String[] { String.valueOf(id) });
+
+		db.close();
+	}
+
 	public String vratiRodjendan(int id) {
 
 		SQLiteDatabase db = this.getReadableDatabase();
@@ -85,7 +93,8 @@ public class SQLiteRodjendani extends SQLiteOpenHelper {
 		String x = "";
 
 		if (y.moveToNext()) {
-			x = y.getString(1) + " " + y.getString(2) + "-" + y.getString(3);
+			x = y.getString(1) + ":::" + y.getString(2) + ":::"
+					+ y.getString(3);
 		}
 
 		return x;
