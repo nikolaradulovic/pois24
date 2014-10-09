@@ -5,40 +5,27 @@
     android:layout_height="match_parent"
     android:background="@drawable/pozadina1"
     android:orientation="vertical"
-    android:weightSum="13"
+    android:weightSum="11"
     tools:context="com.example.pois24.StetoskopActivity"
     tools:ignore="MergeRootFrame" >
 
     <Button
-        android:id="@+id/btnTerapija1"
-        android:layout_width="match_parent"
+        
+        android:id="@+id/btnUjutru"
+        android:layout_width="match_parent" 
         android:layout_height="0dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:layout_weight="2"
         android:background="@drawable/rectangle"
-        android:text="@string/TERAPIJA1"
+        android:text="@string/ujutru"
         android:textColor="@color/White"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnTerapija2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="18dp"
-        android:layout_weight="2"
-        android:background="@drawable/rectangle"
-        android:text="@string/TERAPIJA2"
-        android:textColor="@color/White"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/btnTerapija3"
+        android:id="@+id/btnUpodne"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="20dp"
@@ -46,13 +33,13 @@
         android:layout_marginTop="18dp"
         android:layout_weight="2"
         android:background="@drawable/rectangle"
-        android:text="@string/TERAPIJA3"
+        android:text="@string/upodne"
         android:textColor="@color/White"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnTerapija4"
+        android:id="@+id/btnUvece"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="20dp"
@@ -60,13 +47,13 @@
         android:layout_marginTop="18dp"
         android:layout_weight="2"
         android:background="@drawable/rectangle"
-        android:text="@string/TERAPIJA4"
+        android:text="@string/uvece"
         android:textColor="@color/White"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnTerapija5"
+        android:id="@+id/btnOpciono"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="20dp"
@@ -74,19 +61,22 @@
         android:layout_marginTop="18dp"
         android:layout_weight="2"
         android:background="@drawable/rectangle"
-        android:text="@string/TERAPIJA5"
+        android:text="@string/opciono"
         android:textColor="@color/White"
         android:textSize="30sp"
         android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/btnBackTerapija"
-        android:layout_width="90dp"
+  <Button
+        android:id="@+id/btnNazad"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_gravity="center"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_weight="3"
-        android:background="@drawable/btn_back" />
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_weight="2"
+        android:background="@drawable/rectangle"
+        android:text="@string/nazad"
+        android:textColor="@color/White"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

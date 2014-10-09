@@ -10,9 +10,12 @@
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
+        android:icon="@drawable/slika22"
         android:label="@string/appName"
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.pois24.MainActivity" >
@@ -23,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.SatActivity"
+            android:name="com.example.pois24.Sat.SatActivity"
             android:label="@string/title_activity_sat" >
             <intent-filter>
                 <action android:name="com.example.pois24.SAT" />
@@ -32,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.PorukaActivity"
+            android:name="com.example.pois24.Poruka.PorukaActivity"
             android:label="@string/title_activity_poruka" >
             <intent-filter>
                 <action android:name="com.example.pois24.PORUKA" />
@@ -41,7 +44,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.StetoskopActivity"
+            android:name="com.example.pois24.Poruka.SendPorukuX"
+            android:label="@string/title_activity_poruka" >
+            <intent-filter>
+                <action android:name="com.example.pois24.PORUKAX" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.pois24.Stetoskop.StetoskopActivity"
             android:label="@string/title_activity_stetoskop" >
             <intent-filter>
                 <action android:name="com.example.pois24.STETOSKOP" />
@@ -50,10 +62,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.PozivActivity"
-            android:label="@string/title_activity_poziv" >
+            android:name="com.example.pois24.Stetoskop.TerapijaActivity"
+            android:label="@string/title_activity_terapija1" >
             <intent-filter>
-                <action android:name="com.example.pois24.POZIV" />
+                <action android:name="com.example.pois24.TERAPIJA1" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -68,55 +80,55 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.SendPoruku1"
-            android:label="@string/title_activity_poruka" >
+            android:name="com.example.pois24.Sat.RodjendanActivity"
+            android:label="@string/title_activity_rodjendan" >
             <intent-filter>
-                <action android:name="com.example.pois24.PORUKA1" />
+                <action android:name="com.example.pois24.RODJENDAN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.SendPoruku2"
-            android:label="@string/title_activity_poruka" >
+            android:name="com.example.pois24.Sat.PodaciActivity"
+            android:label="@string/title_activity_lista" >
             <intent-filter>
-                <action android:name="com.example.pois24.PORUKA2" />
+                <action android:name="com.example.pois24.podaci" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.SendPoruku3"
-            android:label="@string/title_activity_poruka" >
+            android:name="com.example.pois24.Sat.PodaciRodjendanActivity"
+            android:label="@string/title_activity_listaR" >
             <intent-filter>
-                <action android:name="com.example.pois24.PORUKA3" />
+                <action android:name="com.example.pois24.podaciRodj" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.SendPoruku4"
-            android:label="@string/title_activity_poruka" >
+            android:name="com.example.pois24.Sat.PodaciTVprogramActivity"
+            android:label="@string/title_activity_listaTV" >
             <intent-filter>
-                <action android:name="com.example.pois24.PORUKA4" />
+                <action android:name="com.example.pois24.podaciTV" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.SendPoruku5"
-            android:label="@string/title_activity_poruka" >
+            android:name="com.example.pois24.Sat.TvProgramActivity"
+            android:label="@string/title_activity_tv_program" >
             <intent-filter>
-                <action android:name="com.example.pois24.PORUKA5" />
+                <action android:name="com.example.pois24.TVPROGRAM" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.TerapijaActivity"
-            android:label="@string/title_activity_terapija1" >
+            android:name="com.example.pois24.Sat.PreglediActivity"
+            android:label="@string/title_activity_pregledi" >
             <intent-filter>
-                <action android:name="com.example.pois24.TERAPIJA1" />
+                <action android:name="com.example.pois24.PREGLEDI" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

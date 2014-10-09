@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -28,25 +29,26 @@ public class TerapijaActivity extends ActionBarActivity {
 
 	Button sacuvaj, nazad;
 	EditText unos;
-	TextView naslov, kada, kolicina, aktivna;
-	Spinner spin1, spin2;
+	TextView ujutru, spisak, aktivna;
+	Spinner kada, koliko;
 	CheckBox aktivna_ck;
 	private Handler mHandler = new Handler();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setTitle("Podesavanja terapije");
+		
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_3terapija1);
 
-		naslov = (TextView) findViewById(R.id.terapijaNaziv);
-		unos = (EditText) findViewById(R.id.unesiTxt);
-		aktivna_ck = (CheckBox) findViewById(R.id.chbAktivna);
+		ujutru = (TextView) findViewById(R.id.txtNazivUjutru);
+		spisak = (TextView) findViewById(R.id.txtSpisakLekova);
+		unos = (EditText) findViewById(R.id.editSpisak);
+		kada = (Spinner) findViewById(R.id.combo_kada);
+		koliko = (Spinner) findViewById(R.id.combo_koliko);
 		aktivna = (TextView) findViewById(R.id.terapijaAct);
-		kolicina = (TextView) findViewById(R.id.terapijaKolicina);
-		kada = (TextView) findViewById(R.id.terapijaInt);
-		spin1 = (Spinner) findViewById(R.id.combo_kada);
-		spin2 = (Spinner) findViewById(R.id.combo_koliko);
+		aktivna_ck = (CheckBox) findViewById(R.id.chbAktivna);		
 		sacuvaj = (Button) findViewById(R.id.btnSacuvajBroj);
 		nazad = (Button) findViewById(R.id.btnNazadPodesavanja);
 		final Animation animDugme = AnimationUtils.loadAnimation(this,

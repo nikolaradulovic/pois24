@@ -6,18 +6,17 @@
     <string name="title_activity_sat">SatActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_poruka">PorukaActivity</string>
-    <string name="title_activity_stetoskop">StetoskopActivity</string>
+    <string name="title_activity_stetoskop">Izbor terapija</string>
     <string name="title_activity_poziv">PozivActivity</string>
     <string name="title_activity_podesavanja">PodesavanjaActivity</string>
     <string name="title_activity_lista">Svi podaci</string>
     <string name="title_activity_listaR">Podaci o rodjendanima</string>
     <string name="title_activity_listaTV">Podaci o TV programima</string>
-    <string name="podesavanja">Podesavanja</string>
-    <string name="TERAPIJA1">TERAPIJA 1</string>
-    <string name="TERAPIJA2">TERAPIJA 2</string>
-    <string name="TERAPIJA3">TERAPIJA 3</string>
-    <string name="TERAPIJA4">TERAPIJA 4</string>
-    <string name="TERAPIJA5">TERAPIJA 5</string>
+    <string name="podesavanja">Podešavanja</string>
+    <string name="ujutru">UJUTRU</string>
+    <string name="upodne">U PODNE</string>
+    <string name="uvece">UVEČE</string>
+    <string name="opciono">OPCIONO</string>
     <string name="un">Unesite broj:</string>
     <string name="Podsetnik"><u>PODSETNIK</u></string>
     <string name="rodjenjdani">RODJENDANI</string>
@@ -26,6 +25,8 @@
     <string name="uneto">SVI PODACI</string>
     <string name="nazad">NAZAD</string>
     <string name="hint_unos">Unesite ovde:</string>
+    
+    
 
     <color name="blue">#00688B</color>
     <color name="plava">#00006B</color>

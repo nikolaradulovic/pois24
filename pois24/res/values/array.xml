@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="spinner1Items">
-        <item>Izaberi</item>
-        <item>2h</item>
-        <item>4h</item>
-        <item>6h</item>
-        <item>8h</item>
-        <item>10h</item>
-        <item>12h</item>
-        <item>24h</item>
+    <string-array name="spinnerVreme">
+        <item>Vreme uzimanja:</item>
+        <item>06:00</item>
+        <item>06:30</item>
+        <item>07:00</item>
+        <item>07:30</item>
+        <item>08:00</item>
+        <item>08:30</item>
+        <item>09:00</item>
+        <item>09:30</item>
+        <item>10:00</item>
+        <item>10:30</item>
+        <item>11:00</item>
+        <item>11:30</item>
     </string-array>
-    <string-array name="spinner2Items">
-        <item>Izaberi</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        
+    <string-array name="spinnerKolicina">
+        <item>Kolicina:</item>
+        <item>Pola tablete</item>
+        <item>Jedna tableta</item>
+        <item>Dve tablete</item>
+        <item>Tri tablete</item>  
+        <item>Više</item>   
     </string-array>
 </resources>
