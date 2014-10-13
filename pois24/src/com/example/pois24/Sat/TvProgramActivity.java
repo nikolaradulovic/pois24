@@ -22,10 +22,12 @@ import com.example.pois24.R.menu;
 
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -171,7 +173,7 @@ public class TvProgramActivity extends ActionBarActivity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				DialogFragment newFragment = new Vreme('T');
-				newFragment.show(getFragmentManager(), "timePicker");
+				newFragment.show(getSupportFragmentManager(), "timePicker");
 			}
 		});
 	}

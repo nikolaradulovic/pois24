@@ -6,10 +6,14 @@ import com.example.pois24.R.id;
 import com.example.pois24.R.layout;
 
 import baze.SQLiteRodjendani;
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
-import android.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.DialogFragment;
+//import android.app.DialogFragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -26,7 +30,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Build;
 
-public class RodjendanActivity extends ActionBarActivity {
+public class RodjendanActivity extends FragmentActivity {
 
 	static TextView staviDatum;
 	TextView naslov, izbor, ime, prezime;
@@ -75,7 +79,7 @@ public class RodjendanActivity extends ActionBarActivity {
 				// TODO Auto-generated method stub
 
 				DialogFragment newFragment = new Datum('R');
-				newFragment.show(getFragmentManager(), "datePicker");
+				newFragment.show(getSupportFragmentManager(), "datePicker");
 
 			}
 		});

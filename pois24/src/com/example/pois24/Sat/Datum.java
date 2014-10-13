@@ -1,13 +1,15 @@
 package com.example.pois24.Sat;
 
 import java.util.Calendar;
-
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
+import android.support.v4.app.DialogFragment; // VAZNO!!!!!!!!!
 import android.os.Bundle;
 import android.widget.DatePicker;
 
+
+@SuppressLint("ValidFragment")
 public class Datum extends DialogFragment implements
 		DatePickerDialog.OnDateSetListener {
 

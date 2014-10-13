@@ -1,15 +1,15 @@
 package com.example.pois24.Sat;
 
 import java.util.Calendar;
-
-
+import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.app.DialogFragment;
+import android.support.v4.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.widget.TimePicker;
 
+@SuppressLint("ValidFragment")
 public class Vreme extends DialogFragment implements
 		TimePickerDialog.OnTimeSetListener {
 

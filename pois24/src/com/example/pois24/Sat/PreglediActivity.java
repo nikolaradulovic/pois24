@@ -9,7 +9,9 @@ import com.example.pois24.R.menu;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
-import android.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.DialogFragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -26,7 +28,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.os.Build;
 
-public class PreglediActivity extends ActionBarActivity {
+public class PreglediActivity extends FragmentActivity {
 
 	static TextView staviDatum, staviVreme;
 	TextView naslov, ime, datum, vreme;
@@ -63,7 +65,7 @@ public class PreglediActivity extends ActionBarActivity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				DialogFragment newFragment = new Vreme('P');
-				newFragment.show(getFragmentManager(), "timePicker");
+				newFragment.show(getSupportFragmentManager(), "timePicker");
 			}
 		});
 
@@ -88,7 +90,7 @@ public class PreglediActivity extends ActionBarActivity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				DialogFragment newFragment = new Datum('P');
-				newFragment.show(getFragmentManager(), "datePicker");
+				newFragment.show(getSupportFragmentManager(), "datePicker");
 			}
 		});
 
