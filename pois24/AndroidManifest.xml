@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -135,8 +136,11 @@
         </activity>
 
         <receiver
-            android:name="com.example.pois24.Stetoskop.AlarmReceiverTerapija"
-            android:process=":remote" />
+            android:name="com.example.pois24.Stetoskop.AlarmReceiverTerapija"> 
+            <intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -17,6 +17,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -30,6 +31,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.os.Build;
 
 public class TerapijaActivity extends ActionBarActivity {
@@ -125,13 +127,22 @@ public class TerapijaActivity extends ActionBarActivity {
 							minut = 30;
 						case 11:
 							sat = 11;
-							minut = 0;
+							minut = 00;
+						//case 12:
+							//sat = 11;
+						//	minut = 30;
 						case 12:
 							sat = 11;
 							minut = 30;
 
 						}
-
+						Toast t1 = Toast.makeText(getApplicationContext(),
+								"TERAPIJA SAČUVANA",
+								Toast.LENGTH_LONG);
+						t1.setDuration(5500);
+						t1.setGravity(Gravity.CENTER, 0, 0);
+						t1.show();
+						//if(aktivna_ck.isSelected())
 						pokreniAlarm();
 					}
 				}, 260);
@@ -149,7 +160,7 @@ public class TerapijaActivity extends ActionBarActivity {
 		Calendar calNow = Calendar.getInstance();
 		Calendar calSet = (Calendar) calNow.clone();
 
-		calSet.set(Calendar.DAY_OF_WEEK, Calendar.THURSDAY);
+		//calSet.set(Calendar.DAY_OF_WEEK, Calendar.DAY_OF_WEEK); - ne treba, podesava sam
 		calSet.set(Calendar.HOUR_OF_DAY, sat);
 		calSet.set(Calendar.MINUTE, minut);
 		calSet.set(Calendar.SECOND, 0);
@@ -160,8 +171,10 @@ public class TerapijaActivity extends ActionBarActivity {
 		PendingIntent pendingIntent = PendingIntent.getBroadcast(
 				getBaseContext(), RQS_1, intent, 0);
 		AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+		//alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,    
+			//	calSet.getTimeInMillis(), 1*60*60 * 1000, pendingIntent);
 		alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,
-				calSet.getTimeInMillis(), 1 * 60 * 60 * 1000, pendingIntent);
+				calSet.getTimeInMillis(), 24 * 60 *60 * 1000, pendingIntent); // Ponavljanje_na_24h
 	}
 
 }
