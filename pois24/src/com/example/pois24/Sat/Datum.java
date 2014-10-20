@@ -42,6 +42,12 @@ public class Datum extends DialogFragment implements
 		} else if (x == 'P') {
 			PreglediActivity.staviDatum.setText(day + "/" + m + "/" + year);
 		}
+		else if (x == 'S'){
+			SlavaActivity.ispis.setText(day + "/" + m + "/" + year);
+		}
+		else if (x == 'O'){
+			PomeniActivity.ispisDatum.setText(day + "/" + m + "/" + year);
+		}
 
 	}
 }

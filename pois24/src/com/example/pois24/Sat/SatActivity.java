@@ -17,8 +17,8 @@ import android.widget.TextView;
 
 public class SatActivity extends ActionBarActivity {
 
-	TextView naslov, prazan;
-	Button tv, rodjendani, pregledi, nazad, sviPodaci;
+	
+	Button lekar, rodjendani, slave, pomeni, nazad, sviPodaci;
 	private Handler mHandler = new Handler();
 
 	@Override
@@ -83,25 +83,25 @@ public class SatActivity extends ActionBarActivity {
 			}
 		});
 
-		tv.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				v.startAnimation(animDugme);
-				mHandler.postDelayed(new Runnable() {
+		//tv.setOnClickListener(new View.OnClickListener() {
+			//@Override
+			//public void onClick(View v) {
+				//v.startAnimation(animDugme);
+				//mHandler.postDelayed(new Runnable() {
 
-					@Override
-					public void run() {
+					//@Override
+					//public void run() {
 						// TODO Auto-generated method stub
-						Intent openTvProgramActivity = new Intent(
-								"com.example.pois24.TVPROGRAM");
-						startActivity(openTvProgramActivity);
-					}
-				}, 260);
+						//Intent openTvProgramActivity = new Intent(
+							//	"com.example.pois24.TVPROGRAM");
+						//startActivity(openTvProgramActivity);
+					//}
+				//}, 260);
 
-			}
-		});
+			//}
+		//});
 
-		pregledi.setOnClickListener(new View.OnClickListener() {
+		lekar.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				v.startAnimation(animDugme);
@@ -118,16 +118,53 @@ public class SatActivity extends ActionBarActivity {
 
 			}
 		});
+		
+		slave.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+				v.startAnimation(animDugme);
+				mHandler.postDelayed(new Runnable() {
+
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						Intent openRodjendanActivity = new Intent(
+								"com.example.pois24.SLAVA");
+						startActivity(openRodjendanActivity);
+					}
+				}, 260);
+
+			}
+		});
+		
+		pomeni.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				v.startAnimation(animDugme);
+				mHandler.postDelayed(new Runnable() {
+
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						Intent openLista = new Intent(
+								"com.example.pois24.POMENI");
+						startActivity(openLista);
+					}
+				}, 260);
+			}
+		});
 
 	}
 
 	public void initialize() {
 
-		naslov = (TextView) findViewById(R.id.sat_naslov);
-		prazan = (TextView) findViewById(R.id.prazan);
+		lekar = (Button) findViewById(R.id.btnPregledi);
 		rodjendani = (Button) findViewById(R.id.btnRodjendani);
-		tv = (Button) findViewById(R.id.btnTvProgram);
-		pregledi = (Button) findViewById(R.id.btnPregledi);
+		slave = (Button) findViewById(R.id.btnSlave);
+		//tv = (Button) findViewById(R.id.btnTvProgram);
+		pomeni = (Button) findViewById(R.id.btnPomeni);
 		sviPodaci = (Button) findViewById(R.id.btnUneto);
 		nazad = (Button) findViewById(R.id.btnNazad);
 

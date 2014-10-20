@@ -18,15 +18,19 @@
     <string name="uvece">UVEČE</string>
     <string name="opciono">OPCIONO</string>
     <string name="un">Unesite broj:</string>
-    <string name="Podsetnik"><u>PODSETNIK</u></string>
     <string name="rodjenjdani">RODJENDANI</string>
     <string name="tvProgram">TV PROGRAM</string>
     <string name="pregledi">PREGLEDI</string>
+    <string name="slave">SLAVE</string>
+    <string name="imePomen">IME:</string>
+    <string name="grobljePomen">MESTO:</string>
+    <string name="imeSlave">IME SLAVE:</string>
+    <string name="koSlavi">KO SVE SLAVI?</string>
+    <string name="pomeni">POMENI</string>
     <string name="uneto">SVI PODACI</string>
     <string name="nazad">NAZAD</string>
     <string name="hint_unos">Unesite ovde:</string>
-    
-    
+    <string name="lekar">LEKAR</string>
 
     <color name="blue">#00688B</color>
     <color name="plava">#00006B</color>
@@ -65,5 +69,7 @@
     <string name="title_activity_rodjendan">Rodjendan</string>
     <string name="title_activity_tv_program">TV Program</string>
     <string name="title_activity_pregledi">Pregledi</string>
+    <string name="title_activity_slava">Slava</string>
+    <string name="title_activity_pomeni">Pomeni</string>
 
 </resources>
