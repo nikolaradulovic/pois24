@@ -168,7 +168,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.Sat.PomeniActivity"
+            android:name=".Sat.PomeniActivity"
             android:label="@string/title_activity_pomeni"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -176,6 +176,15 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Stetoskop.MyAlarmService"
+            android:enabled="true"
+            android:label="@string/title_activity_my_alarm_service" >
+        </activity>
+        <activity
+            android:name="com.example.pois24.Stetoskop.ConfirmAlarmDialog"
+            android:label="@string/title_activity_confirm_alarm_dialog" >
         </activity>
     </application>
 

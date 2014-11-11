@@ -12,13 +12,16 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/slika22"
         android:label="@string/appName"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.pois24.MainActivity" >
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,8 +29,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.Sat.SatActivity"
-            android:label="@string/title_activity_sat" >
+            android:name=".Sat.SatActivity"
+            android:label="@string/title_activity_sat"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.pois24.SAT" />
 
@@ -35,8 +39,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.Poruka.PorukaActivity"
-            android:label="@string/title_activity_poruka" >
+            android:name=".Poruka.PorukaActivity"
+            android:label="@string/title_activity_poruka"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.pois24.PORUKA" />
 
@@ -44,8 +49,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.Poruka.SendPorukuX"
-            android:label="@string/title_activity_poruka" >
+            android:name=".Poruka.SendPorukuX"
+            android:label="@string/title_activity_poruka"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.pois24.PORUKAX" />
 
@@ -53,8 +59,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.Stetoskop.StetoskopActivity"
-            android:label="@string/title_activity_stetoskop" >
+            android:name=".Stetoskop.StetoskopActivity"
+            android:label="@string/title_activity_stetoskop"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.pois24.STETOSKOP" />
 
@@ -62,8 +69,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.Stetoskop.TerapijaActivity"
-            android:label="@string/title_activity_terapija1" >
+            android:name=".Stetoskop.TerapijaActivity"
+            android:label="@string/title_activity_terapija1"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.pois24.TERAPIJA1" />
 
@@ -71,8 +79,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.PodesavanjaActivity"
-            android:label="@string/title_activity_podesavanja" >
+            android:name=".PodesavanjaActivity"
+            android:label="@string/title_activity_podesavanja"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.pois24.PODESAVANJA" />
 
@@ -80,8 +89,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.Sat.RodjendanActivity"
-            android:label="@string/title_activity_rodjendan" >
+            android:name=".Sat.RodjendanActivity"
+            android:label="@string/title_activity_rodjendan"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.pois24.RODJENDAN" />
 
@@ -89,8 +99,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.Sat.PodaciActivity"
-            android:label="@string/title_activity_lista" >
+            android:name=".Sat.PodaciActivity"
+            android:label="@string/title_activity_lista"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.pois24.podaci" />
 
@@ -98,8 +109,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.Sat.PodaciRodjendanActivity"
-            android:label="@string/title_activity_listaR" >
+            android:name=".Sat.PodaciRodjendanActivity"
+            android:label="@string/title_activity_listaR"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.pois24.podaciRodj" />
 
@@ -107,8 +119,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.Sat.PodaciTVprogramActivity"
-            android:label="@string/title_activity_listaTV" >
+            android:name=".Sat.PodaciTVprogramActivity"
+            android:label="@string/title_activity_listaTV"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.pois24.podaciTV" />
 
@@ -116,8 +129,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.Sat.TvProgramActivity"
-            android:label="@string/title_activity_tv_program" >
+            android:name=".Sat.TvProgramActivity"
+            android:label="@string/title_activity_tv_program"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.pois24.TVPROGRAM" />
 
@@ -125,13 +139,52 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.pois24.Sat.PreglediActivity"
-            android:label="@string/title_activity_pregledi" >
+            android:name=".Sat.PreglediActivity"
+            android:label="@string/title_activity_pregledi"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.example.pois24.PREGLEDI" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".Stetoskop.AlarmReceiverTerapija"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".Sat.SlavaActivity"
+            android:label="@string/title_activity_slava"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.example.pois24.SLAVA" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Sat.PomeniActivity"
+            android:label="@string/title_activity_pomeni"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.example.pois24.POMENI" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Stetoskop.MyAlarmService"
+            android:enabled="true"
+            android:label="@string/title_activity_my_alarm_service" >
+        </activity>
+        <activity
+            android:name="com.example.pois24.Stetoskop.ConfirmAlarmDialog"
+            android:label="@string/title_activity_confirm_alarm_dialog" >
         </activity>
     </application>
 
