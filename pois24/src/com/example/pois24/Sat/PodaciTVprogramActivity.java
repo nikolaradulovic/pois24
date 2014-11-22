@@ -37,7 +37,7 @@ public class PodaciTVprogramActivity extends ActionBarActivity {
 			}
 
 			ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
-					R.layout.list_row, R.id.title, programi);
+					R.layout.list_item, R.id.title, programi);
 
 			listaPrograma.setAdapter(adapter1);
 

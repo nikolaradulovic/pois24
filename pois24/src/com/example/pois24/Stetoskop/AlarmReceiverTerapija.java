@@ -35,7 +35,6 @@ public class AlarmReceiverTerapija extends BroadcastReceiver {
 //		    Bundle extras = intent.getExtras();
 //		    // Set values for use in this class
 //		    String nTitle = extras.getString("Naslov");
-
 		Toast t1 = Toast.makeText(arg0,"VREME JE ZA TERAPIJU!",Toast.LENGTH_LONG);
 		t1.setDuration(60000);
 		t1.setGravity(Gravity.CENTER, 0, 0);

@@ -1,5 +1,7 @@
 package com.example.pois24.Sat;
 
+import baze.SQLiteSlave;
+
 import com.example.pois24.R;
 import com.example.pois24.R.id;
 import com.example.pois24.R.layout;
@@ -23,33 +25,28 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SlavaActivity extends ActionBarActivity {
-	
+
 	static TextView ispis;
 	TextView naslov, ime, koSlavi;
-	EditText unosIme,unosKo;
+	EditText unosIme, unosKo;
 	Button izaberiDatum, sacuvaj, nazad;
 	DatePicker datum;
 	private Handler mHandler = new Handler();
+	SQLiteSlave db;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_slava);
-		
-		naslov = (TextView) findViewById(R.id.txtSlaveTitle);
-		ime = (TextView) findViewById(R.id.txtImeSlave);
-		unosIme = (EditText) findViewById(R.id.editUnosSlave);
-		izaberiDatum = (Button) findViewById(R.id.izaberiDane);
-		ispis = (TextView) findViewById(R.id.txtIspisDatum);
-		koSlavi = (TextView) findViewById(R.id.txtKoSlavi);
-		unosKo = (EditText) findViewById(R.id.editKoSlavi);
-		sacuvaj = (Button) findViewById(R.id.btnSacuvajBroj);
-		nazad = (Button) findViewById(R.id.btnNazadRodjendan);
+		initialize();
+		db = new SQLiteSlave(this);
+
 		final Animation animDugme = AnimationUtils.loadAnimation(this,
 				R.anim.anim_alpha);
-		
+
 		nazad.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -64,7 +61,7 @@ public class SlavaActivity extends ActionBarActivity {
 				}, 260);
 			}
 		});
-		
+
 		izaberiDatum.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -76,7 +73,42 @@ public class SlavaActivity extends ActionBarActivity {
 
 			}
 		});
+
+		sacuvaj.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				String imeSlave = unosIme.getText().toString();
+				String koSlavi = unosKo.getText().toString();
+				String datum = ispis.getText().toString();
+
+				if (imeSlave.equals("") || koSlavi.equals("")
+						|| datum.equals("")) {
+					Toast t2 = Toast.makeText(getApplicationContext(),
+							"NISTE UNELI SVE PODATKE", Toast.LENGTH_LONG);
+					t2.show();
+				} else {
+					db.dodajSlavu(imeSlave, datum, koSlavi);
+
+					Toast t1 = Toast.makeText(getApplicationContext(),
+							"USPEŠNO STE SAČUVALI SLAVU", Toast.LENGTH_LONG);
+					t1.show();
+				}
+			}
+		});
 	}
-	
-	
+
+	private void initialize() {
+		naslov = (TextView) findViewById(R.id.txtSlaveTitle);
+		ime = (TextView) findViewById(R.id.txtImeSlave);
+		unosIme = (EditText) findViewById(R.id.editUnosSlave);
+		izaberiDatum = (Button) findViewById(R.id.izaberiDane);
+		ispis = (TextView) findViewById(R.id.txtIspisDatum);
+		koSlavi = (TextView) findViewById(R.id.txtKoSlavi);
+		unosKo = (EditText) findViewById(R.id.editKoSlavi);
+		sacuvaj = (Button) findViewById(R.id.btnSacuvajBroj);
+		nazad = (Button) findViewById(R.id.btnNazadRodjendan);
+	}
+
 }

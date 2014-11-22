@@ -4,20 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.pois24.CustomAdapter;
+import com.example.pois24.MainActivity;
 import com.example.pois24.R;
+import com.example.pois24.Stetoskop.TerapijaActivity;
 
 import baze.SQLiteRodjendani;
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class PodaciRodjendanActivity extends ActionBarActivity {
 
 	ListView listaRodjendana;
 	SQLiteRodjendani db;
 	List<_Rodjendan> rodjendani;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +37,47 @@ public class PodaciRodjendanActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_1podaci_rodjendan);
 		db = new SQLiteRodjendani(this);
 		initialize();
+		
+		listaRodjendana.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@SuppressLint("NewApi") @Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				final int positionToRemove = position;
+				View viewToRemove = view;
+//				Intent i1 = new Intent("com.example.pois24.RODJENDAN");
+//				startActivity(i1);
+				// TODO Auto-generated method stub
+				AlertDialog.Builder builder1 = new AlertDialog.Builder(
+						PodaciRodjendanActivity.this);
+				builder1.setMessage("DA LI STE SIGURNI DA ŽELITE DA OBRIŠETE RODJENDAN ?");
+				builder1.setCancelable(true);
+				builder1.setPositiveButton("DA",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								int p1 = positionToRemove;
+								_Rodjendan r = rodjendani.get(p1);
+								Log.d("PozitionToRemove", Integer.toString(p1));
+								Log.d("Ime", r.getIme());
+								Log.d("id", Integer.toString(r.getId()));
+								db.obrisiRodjendan(r.getId());								
+							    napuniRodjendane();
+							    finish();
+								
+//								initialize();
+							}
+						});
+				builder1.setNegativeButton("NE",
+						new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int id) {
+								dialog.cancel();
+							}
+						});
+
+				builder1.show();
+				
+			}
+		});
 	}
 
 	// private void inicijalizuj() {
@@ -51,42 +104,57 @@ public class PodaciRodjendanActivity extends ActionBarActivity {
 
 	private void initialize() {
 		listaRodjendana = (ListView) findViewById(R.id.listaRodjendana);
-
 		napuniRodjendane();
 
 		if (rodjendani.isEmpty()) {
 
 		} else {
-			CustomAdapter ca = new CustomAdapter(this, R.layout.list_row,
+			CustomAdapter ca = new CustomAdapter(this, R.layout.list_item,
 					R.id.title, rodjendani);
+			
+//			ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
+//					R.layout.list_item, R.id.title, programi);
 
 			listaRodjendana.setAdapter(ca);
 		}
-
 	}
 
 	private void napuniRodjendane() {
 		int size = db.vratiBrojRodjendana();
-
+		
 		rodjendani = new ArrayList<_Rodjendan>();
 
 		for (int i = 0; i < size; i++) {
 			String x = db.vratiRodjendan(i + 1);
-			if (!x.isEmpty()) {
-				String[] II_PP_DD = x.split(":::");
+			
+			Log.d("Rodj: ",x);
+			
+			// treba isEmpty popraviti!!!
+			if (!x.equals("")) {
+				String[] ID_II_PP_DD = x.split(":::");
 
-				String date = II_PP_DD[2];
+				String date = ID_II_PP_DD[3];
 				String[] dateArray = date.split("/");
 
 				int dd = Integer.parseInt(dateArray[0]);
 				int mm = Integer.parseInt(dateArray[1]);
 				int yy = Integer.parseInt(dateArray[2]);
 
-				_Rodjendan r = new _Rodjendan(II_PP_DD[0], II_PP_DD[1], dd, mm,
+				_Rodjendan r = new _Rodjendan(Integer.parseInt(ID_II_PP_DD[0]), ID_II_PP_DD[1], ID_II_PP_DD[2], dd, mm,
 						yy);
+			;
 				rodjendani.add(r);
 			}
 
 		}
+	
 	}
+	
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+	
+	}
+	
 }

@@ -4,11 +4,13 @@ public class _Rodjendan {
 
 	private String ime;
 	private String prezime;
+	private int id;
 	private int day;
 	private int month;
 	private int year;
 
-	public _Rodjendan(String i, String p, int d, int m, int year) {
+	public _Rodjendan(int idR, String i, String p, int d, int m, int year) {
+		id = idR;
 		ime = i;
 		prezime = p;
 		day = d;
@@ -23,6 +25,14 @@ public class _Rodjendan {
 
 	public void setDay(int day) {
 		this.day = day;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getMonth() {

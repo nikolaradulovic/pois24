@@ -52,19 +52,13 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnOpciono"
+    <TextView 
+        android:id="@+id/txtPrazan"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="18dp"
-        android:layout_weight="2"
-        android:background="@drawable/rectangle"
-        android:text="@string/opciono"
-        android:textColor="@color/White"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+    	android:layout_height="0dp"
+    	android:layout_weight="2" />
+    	
+ 
   <Button
         android:id="@+id/btnNazad"
         android:layout_width="match_parent"

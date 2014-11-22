@@ -29,16 +29,16 @@ public class CustomAdapter extends ArrayAdapter<_Rodjendan> {
 		if (v == null) {
 			LayoutInflater vi;
 			vi = LayoutInflater.from(getContext());
-			v = vi.inflate(R.layout.list_row, null);
+			v = vi.inflate(R.layout.list_item, parent, false);
 		}
 
 		_Rodjendan r = getItem(position);
 
 		if (r != null) {
-			TextView tv1 = (TextView) v.findViewById(R.id.title);
+			TextView tv1 = (TextView) v.findViewById(R.id.title1);
 
 			if (tv1 != null) {
-				tv1.setText(r.getIme() + r.getPrezime() + r.getDay()
+				tv1.setText(r.getIme() +" "+ r.getPrezime()+ " " + r.getDay() +" "+
 						+ r.getMonth());
 			}
 		}

@@ -1,5 +1,8 @@
 package com.example.pois24.Sat;
 
+import baze.SQLitePregledi;
+import baze.SQLiteRodjendani;
+
 import com.example.pois24.R;
 import com.example.pois24.R.anim;
 import com.example.pois24.R.id;
@@ -26,6 +29,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 import android.os.Build;
 
 public class PreglediActivity extends FragmentActivity {
@@ -37,11 +41,13 @@ public class PreglediActivity extends FragmentActivity {
 	DatePicker datumP;
 	Button sacuvaj, nazad, dajDatum, dajVreme;
 	private Handler mHandler = new Handler();
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_1pregledi);
+		
 
 		naslov = (TextView) findViewById(R.id.txtPregledNaslov);
 		ime = (TextView) findViewById(R.id.txtPregledIme);
@@ -100,16 +106,40 @@ public class PreglediActivity extends FragmentActivity {
 			public void onClick(View v) {
 				v.startAnimation(animDugme);
 				mHandler.postDelayed(new Runnable() {
-
+					String imeBolnice = unos.getText().toString();
+					String datum = staviDatum.getText().toString();
+					String vreme = staviVreme.getText().toString();
+					SQLitePregledi bazaPregledi = new SQLitePregledi(PreglediActivity.this);
 					@Override
 					public void run() {
 						// TODO Auto-generated method stub
+						if (imeBolnice.equals("") || datum.equals("") || vreme.equals("")) {
+							Toast t2 = Toast.makeText(getApplicationContext(),
+									"Niste uneli sve podatke",
+									Toast.LENGTH_LONG);
+							t2.show();
+						} else {
+//							bazaPregledi.open();
+							//bazaPregledi.open();
+							bazaPregledi.dodajPregled(imeBolnice, datum, vreme);
+							bazaPregledi.close();
+							Toast t1 = Toast.makeText(getApplicationContext(),
+									"Uspešno ste uneli pregled",
+									Toast.LENGTH_LONG);
+							t1.show();
+						}
 
 					}
 				}, 260);
 			}
 		});
 	}
+	
+//	protected void onPause() {
+//		// TODO Auto-generated method stub
+//		super.onPause();
+//		bazaPregledi.close();
+//	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

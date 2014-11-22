@@ -34,34 +34,37 @@ public class AutoStart extends BroadcastReceiver {
     		 sqlTerapija = new SQLiteTerapija(context);
     		    db = sqlTerapija.getWritableDatabase();
     		    // static?
-    		    Cursor cursor =  db.query(sqlTerapija.getTableTerapija(), sqlTerapija.getColumns(), null, null, null, null, null);
-//        		db = new SQLiteTerapija(context)
-//            	db.getReadableDatabase();
-//            	Cursor cursor = db.queueAll();
-//            	cursor.getColumnIndex(columnName)
-            if (cursor.moveToNext()) {
-//                    Date alarmDate = new Date(cursor.getLong(cursor.getColumnIndex()));
+    		    
+    		   // Cursor cursor =  db.query(sqlTerapija.getTableTerapija(), sqlTerapija.getColumns(), null, null, null, null, null);
+    		    Cursor cursor = sqlTerapija.queueAll();
+            while (cursor.moveToNext()) {
                     Calendar aCal = Calendar.getInstance();
                     aCal.set(Calendar.HOUR_OF_DAY, Integer.parseInt(cursor.getString(2)));
             		aCal.set(Calendar.MINUTE, Integer.parseInt(cursor.getString(3)));
             		aCal.set(Calendar.SECOND, 0);
             		aCal.set(Calendar.MILLISECOND, 0); 
-            		String title = cursor.getString(cursor.getColumnIndex(cursor.getString(1)));
+            	//	String title = cursor.getString(cursor.getColumnIndex(cursor.getString(1)));
 //                    int alarmID = cursor.getInt(cursor.getColumnIndex(SQLiteAdapter.getAlarmID()));
 //                    AlarmUtils.setAlarm(title, notes, alarmID, context, aCal);
-            		SetAlarm(context,aCal);
+            	SetAlarm(context,aCal);
+//            		AlarmManager am=(AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+//            		Intent i = new Intent(context, AlarmReceiverTerapija.class);
+//            		PendingIntent pi = PendingIntent.getBroadcast(context, 0, i, PendingIntent.FLAG_UPDATE_CURRENT | Intent.FILL_IN_DATA);
+//            		am.setRepeating(AlarmManager.RTC_WAKEUP, aCal.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pi); // Millisec * Second * Minute
+            		    
             		
-            			
-            }
-        }
+            		
+            		
+            }		
+            }        
     }
     
-    public void SetAlarm(Context context, Calendar cal)
-    {
+    public void SetAlarm(Context context, Calendar cal){
         AlarmManager am=(AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
         Intent i = new Intent(context, AlarmReceiverTerapija.class);
-        PendingIntent pi = PendingIntent.getBroadcast(context, 0, i, 0);
-        am.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pi); // Millisec * Second * Minute
+        PendingIntent sender = PendingIntent.getBroadcast(context, 0,
+    i, PendingIntent.FLAG_UPDATE_CURRENT | Intent.FILL_IN_DATA);
+        am.setRepeating(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), AlarmManager.INTERVAL_DAY, sender); // Millisec * Second * Minute
     }
 
 

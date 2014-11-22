@@ -1,5 +1,7 @@
 package com.example.pois24.Sat;
 
+import baze.SQLitePomeni;
+
 import com.example.pois24.R;
 import com.example.pois24.R.id;
 import com.example.pois24.R.layout;
@@ -22,6 +24,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PomeniActivity extends ActionBarActivity {
 	
@@ -31,7 +34,9 @@ public class PomeniActivity extends ActionBarActivity {
 	DatePicker datum;
 	Button izaberiDatum, sacuvaj, nazad;
 	private Handler mHandler = new Handler();
-
+	private SQLitePomeni db = new SQLitePomeni(this);
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,6 +53,7 @@ public class PomeniActivity extends ActionBarActivity {
 		nazad = (Button) findViewById(R.id.btnNazadRodjendan);
 		final Animation animDugme = AnimationUtils.loadAnimation(this,
 				R.anim.anim_alpha);
+		
 		
 		nazad.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -76,6 +82,39 @@ public class PomeniActivity extends ActionBarActivity {
 			}
 		});
 		
-		
+		sacuvaj.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				v.startAnimation(animDugme);
+				mHandler.postDelayed(new Runnable() {
+				String ime = unosIme.getText().toString();
+				String mesto = unosMesto.getText().toString();
+				String datum = ispisDatum.getText().toString();
+					@Override
+					public void run() {
+						if (ime.equals("") || mesto.equals("") || datum.equals("")) {
+							Toast t2 = Toast.makeText(getApplicationContext(),
+									"NISTE UNELI SVE PODATKE",
+									Toast.LENGTH_LONG);
+							t2.show();
+						} else {
+							db.dodajPomen(ime, mesto, datum);
+							Toast t1 = Toast.makeText(getApplicationContext(),
+									"USPEŠNO STE DODALI POMEN",
+									Toast.LENGTH_LONG);
+							t1.show();
+						}
+						// TODO Auto-generated method stub		
+						finish();
+					}
+				}, 260);
+			}
+		});
+	}
+	
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		db.close();
 	}
 }

@@ -8,6 +8,7 @@ import com.example.pois24.R.menu;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -16,13 +17,14 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class StetoskopActivity extends ActionBarActivity {
 
 	Button ujutru;
 	Button upodne;
 	Button uvece;
-	Button opciono;
+	TextView prazan;
 	Button nazad;
 	
 	private Handler mHandler = new Handler();
@@ -31,11 +33,13 @@ public class StetoskopActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_3stetoskop);
+		
+	
 
 		ujutru = (Button) findViewById(R.id.btnUjutru);
 		upodne = (Button) findViewById(R.id.btnUpodne);
 		uvece = (Button) findViewById(R.id.btnUvece);
-		opciono = (Button) findViewById(R.id.btnOpciono);
+		prazan = (TextView) findViewById(R.id.txtPrazan);
 		nazad = (Button) findViewById(R.id.btnNazad);
 		final Animation animDugme = AnimationUtils.loadAnimation(this,
 				R.anim.anim_alpha);
@@ -61,15 +65,41 @@ public class StetoskopActivity extends ActionBarActivity {
 			public void onClick(View v) {
 				Intent openTerapijaActivity = new Intent(
 						"com.example.pois24.TERAPIJA1");
+				Bundle b1 = new Bundle();
+				b1.putInt("dan", 1);
+				openTerapijaActivity.putExtras(b1);
 				startActivity(openTerapijaActivity);
 			}
 		});
 
 
-		// if (savedInstanceState == null) {
-		// getSupportFragmentManager().beginTransaction()
-		// .add(R.id.btnBackTerapije, new PlaceholderFragment()).commit();
-		// }
+		upodne.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent openTerapijaActivity = new Intent(
+						"com.example.pois24.TERAPIJA1");
+				Bundle b1 = new Bundle();
+				b1.putInt("dan", 2);
+				openTerapijaActivity.putExtras(b1);
+				startActivity(openTerapijaActivity);
+			}
+		});
+		
+		uvece.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent openTerapijaActivity = new Intent(
+						"com.example.pois24.TERAPIJA1");
+				Bundle b1 = new Bundle();
+				b1.putInt("dan", 3);
+				openTerapijaActivity.putExtras(b1);
+				startActivity(openTerapijaActivity);	
+			}
+		});
 	}
 
 	@Override

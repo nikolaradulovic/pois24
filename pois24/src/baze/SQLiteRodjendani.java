@@ -11,7 +11,7 @@ import android.os.Environment;
 public class SQLiteRodjendani extends SQLiteOpenHelper {
 
 	private static final int DATABASE_VERSION = 1;
-	private static final String DATABASE_NAME = "RodjendaniRX";
+	private static final String DATABASE_NAME = "RodjendaniRXX";
 	private static final String TABLE_RODJENDANI = "Rodjendani";
 
 	// private static final String DATABASE_PATH =
@@ -40,6 +40,8 @@ public class SQLiteRodjendani extends SQLiteOpenHelper {
 		db.execSQL("DROP TABLE IF EXISTS" + TABLE_RODJENDANI);
 		onCreate(db);
 	}
+	
+	
 
 	// public int updatePrimer(String primer, int id) {
 	//
@@ -93,7 +95,7 @@ public class SQLiteRodjendani extends SQLiteOpenHelper {
 		String x = "";
 
 		if (y.moveToNext()) {
-			x = y.getString(1) + ":::" + y.getString(2) + ":::"
+			x =y.getString(0)+":::"+ y.getString(1) + ":::" + y.getString(2) + ":::"
 					+ y.getString(3);
 		}
 

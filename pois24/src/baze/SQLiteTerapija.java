@@ -20,7 +20,7 @@ public class SQLiteTerapija extends SQLiteOpenHelper {
 	private static final String TABLE_TERAPIJA = "Terapija";
 
 	private static final String[] COLUMNS = { "id", "spisak", "sat", "minut",
-			"kolicina", "aktivna" };
+			"kolicina", "aktivna", "pozicija1", "pozicija2" };
 
 	// OVO JE DA MOZES DA CITAS IZ FOLDERA /BAZE U TELEFONU
 	public SQLiteTerapija(Context context) {
@@ -32,10 +32,11 @@ public class SQLiteTerapija extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
-// zamenio vreme na LONG, videti da li radi
+		// zamenio vreme na LONG, videti da li radi
 		String cr = "CREATE TABLE " + getTableTerapija() + "(" + "id"
-				+ " INTEGER PRIMARY KEY," + "spisak TEXT," + "sat TEXT,"+ "minut TEXT,"
-				+ "kolicina TEXT," + "aktivna TEXT)";
+				+ " INTEGER PRIMARY KEY," + "spisak TEXT," + "sat TEXT,"
+				+ "minut TEXT," + "kolicina TEXT," + "aktivna TEXT,"
+				+ "pozicija1 TEXT," + "pozicija2 TEXT)";
 
 		try {
 			db.execSQL(cr);
@@ -56,7 +57,8 @@ public class SQLiteTerapija extends SQLiteOpenHelper {
 		onCreate(db);
 	}
 
-	public void dodajTerapiju(int id, String s, String sat, String minut, String k, String a) {
+	public void dodajTerapiju(int id, String s, String sat, String minut,
+			String k, String a, String pozicija1, String pozicija2) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
@@ -66,7 +68,9 @@ public class SQLiteTerapija extends SQLiteOpenHelper {
 		values.put("minut", minut);
 		values.put("kolicina", k);
 		values.put("aktivna", a);
-		
+		values.put("pozicija1", pozicija1);
+		values.put("pozicija2", pozicija2);
+
 		db.insert(getTableTerapija(), null, values);
 		db.close();
 	}
@@ -82,107 +86,110 @@ public class SQLiteTerapija extends SQLiteOpenHelper {
 
 		if (y.moveToNext()) {
 			x = y.getString(1) + ":::" + y.getString(2) + ":::"
-					+ y.getString(3) + ":::" + y.getString(4);
+					+ y.getString(3) + ":::" + y.getString(4) + ":::"
+					+ y.getString(5) + ":::" + y.getString(6) + ":::"
+					+ y.getString(7);
 		}
 
 		return x;
 	}
-	
-//	public String vratiTerapiju1() {
-//
-//		SQLiteDatabase db = this.getReadableDatabase();
-//
-//		Cursor y = db.query(TABLE_TERAPIJA, COLUMNS, null,
-//				null, null, null, null, null);
-//		String x = "";
-//		
-//		//x += Integer.toString(y.getCount());
-//		if (y.moveToNext()) {
-//			x += y.getString(0) +":::"+ y.getString(1) + ":::" + y.getString(2) + ":::"
-//					+ y.getString(3) + ":::" + y.getString(4) + " |||";
-//		}
-//
-//		return x;
-//	}
-	
+
+	// public String vratiTerapiju1() {
+	//
+	// SQLiteDatabase db = this.getReadableDatabase();
+	//
+	// Cursor y = db.query(TABLE_TERAPIJA, COLUMNS, null,
+	// null, null, null, null, null);
+	// String x = "";
+	//
+	// //x += Integer.toString(y.getCount());
+	// if (y.moveToNext()) {
+	// x += y.getString(0) +":::"+ y.getString(1) + ":::" + y.getString(2) +
+	// ":::"
+	// + y.getString(3) + ":::" + y.getString(4) + " |||";
+	// }
+	//
+	// return x;
+	// }
+
 	public Cursor queueAll() {
 		SQLiteDatabase db = this.getWritableDatabase();
-	    return db.query(getTableTerapija(), getColumns(), null, null, null, null, null, null);
-	    
-	} 
-	
+		return db.query(getTableTerapija(), getColumns(), null, null, null,
+				null, null, null);
+
+	}
+
 	public String vratiNaziv1(int id) {
 
 		SQLiteDatabase db = this.getReadableDatabase();
 
 		Cursor y = queueAll();
-		
+
 		String x = "";
-		if(y.moveToNext()){
-			x += y.getString(0)+ " "+y.getString(1);
+		if (y.moveToNext()) {
+			x += y.getString(0) + " " + y.getString(1);
 		}
 
 		return x;
 	}
-	
+
 	public String vratiNaziv() {
 
 		SQLiteDatabase db = this.getReadableDatabase();
 
-		Cursor y = db.query(getTableTerapija(), getColumns(), null,
-				null, null, null, null, null);
-		
+		Cursor y = db.query(getTableTerapija(), getColumns(), null, null, null,
+				null, null, null);
+
 		String x = "";
-		if(y.moveToNext()){
+		if (y.moveToNext()) {
 			x += y.getString(1);
 		}
 
 		return x;
 	}
-	
 
 	public String vratiID() {
 
 		SQLiteDatabase db = this.getReadableDatabase();
 
-		Cursor y = db.query(getTableTerapija(), getColumns(), null,
-				null, null, null, null, null);
-		
+		Cursor y = db.query(getTableTerapija(), getColumns(), null, null, null,
+				null, null, null);
+
 		String x = "";
-		if(y.moveToNext()){
+		if (y.moveToNext()) {
 			x += y.getString(0);
 		}
 
 		return x;
 	}
-	
+
 	public String vratiSat() {
 
 		SQLiteDatabase db = this.getReadableDatabase();
 
-		Cursor y = db.query(getTableTerapija(), getColumns(), null,
-				null, null, null, null, null);
-		
+		Cursor y = db.query(getTableTerapija(), getColumns(), null, null, null,
+				null, null, null);
+
 		String x = "";
-		if(y.moveToNext()){
+		if (y.moveToNext()) {
 			// zasto mi ovde pozicije gleda drugacije nego u vratiNaziv?
-			x =y.getString(2);
+			x = y.getString(2);
 		}
 
 		return x;
 	}
-	
+
 	public String vratiMinut() {
 
 		SQLiteDatabase db = this.getReadableDatabase();
 
-		Cursor y = db.query(getTableTerapija(), getColumns(), null,
-				null, null, null, null, null);
-		
+		Cursor y = db.query(getTableTerapija(), getColumns(), null, null, null,
+				null, null, null);
+
 		String x = "";
-		if(y.moveToNext()){
+		if (y.moveToNext()) {
 			// zasto mi ovde pozicije gleda drugacije nego u vratiNaziv?
-			x =y.getString(3);
+			x = y.getString(3);
 		}
 
 		return x;
@@ -196,29 +203,32 @@ public class SQLiteTerapija extends SQLiteOpenHelper {
 		return COLUMNS;
 	}
 
-	// public int updateTerapija(int id, String s, String v, String k, String a)
-	// {
-	//
-	// // 1. get reference to writable DB
-	// SQLiteDatabase db = this.getWritableDatabase();
-	//
-	// // 2. create ContentValues to add key "column"/value
-	// ContentValues values = new ContentValues();
-	// values.put("spisak", s);
-	// values.put("vreme", v);
-	// values.put("kolicina", k);
-	// values.put("aktivna", a);
-	//
-	// // 3. updating row
-	// int i = db.update(TABLE_TERAPIJA, // table
-	// values, // column/value
-	// "id=?", // selections
-	// new String[] { String.valueOf(id) }); // selection args
-	//
-	// // 4. close
-	// db.close();
-	//
-	// return i;
-	//
-	// }
+	 public int updateTerapija(int id, String s, String sat, String minut, String k, String a, String p1, String p2)
+	 {
+	
+	 // 1. get reference to writable DB
+	 SQLiteDatabase db = this.getWritableDatabase();
+	
+	 // 2. create ContentValues to add key "column"/value
+	 ContentValues values = new ContentValues();
+	 values.put("spisak", s);
+	 values.put("sat", sat);
+	 values.put("minut", minut);
+	 values.put("kolicina", k);
+	 values.put("aktivna", a);
+	 values.put("pozicija1", p1);
+	 values.put("pozicija2", p2);
+	
+	 // 3. updating row
+	 int i = db.update(TABLE_TERAPIJA, // table
+	 values, // column/value
+	 "id=?", // selections
+	 new String[] { String.valueOf(id) }); // selection args
+	
+	 // 4. close
+	 db.close();
+	
+	 return i;
+	
+	 }
 }

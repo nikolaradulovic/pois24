@@ -8,24 +8,21 @@
     android:weightSum="12"
     tools:context="com.example.pois24.Sat.SatActivity"
     tools:ignore="MergeRootFrame" >
-
-    <TextView
-        android:id="@+id/sat_naslov"
+    
+    <Button
+        android:id="@+id/btnPregledi"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:gravity="center"
-        android:text="@string/Podsetnik"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="2"
+        android:background="@drawable/rectangle"
+        android:text="@string/lekar"
         android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/prazan"
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
-        android:text="" />
 
     <Button
         android:id="@+id/btnRodjendani"
@@ -33,41 +30,43 @@
         android:layout_height="0dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="15dp"
         android:layout_weight="2"
         android:background="@drawable/rectangle"
         android:text="@string/rodjenjdani"
         android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/btnTvProgram"
+    
+     <Button
+        android:id="@+id/btnSlave"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="15dp"
         android:layout_weight="2"
         android:background="@drawable/rectangle"
-        android:text="@string/tvProgram"
+        android:text="@string/slave"
         android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnPregledi"
+        android:id="@+id/btnPomeni"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="15dp"
         android:layout_weight="2"
         android:background="@drawable/rectangle"
-        android:text="@string/pregledi"
+        android:text="@string/pomeni"
         android:textColor="@color/white"
         android:textSize="35sp"
         android:textStyle="bold" />
+
+    
 
     <Button
         android:id="@+id/btnUneto"
@@ -75,7 +74,7 @@
         android:layout_height="0dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="15dp"
         android:layout_weight="2"
         android:background="@drawable/rectangle"
         android:text="@string/uneto"
@@ -90,7 +89,7 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="15dp"
         android:layout_weight="2"
         android:background="@drawable/rectangle"
         android:text="@string/nazad"
